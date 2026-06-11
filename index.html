@@ -795,7 +795,7 @@
           <span class="case-tag">최소 개선안 설계</span>
           <span class="case-tag">유사 케이스로 확장 적용</span>
         </div>
-        <h3>배송 제약 VOC를 UX 개선 스펙으로 전환 — 개발팀 제안·당일 구현·반복 문의 0건 수준</h3>
+        <h3>배송일 충돌 오인을 줄이기 위한 상품별 안내 구조 개선 — 개발팀 제안·당일 구현·반복 문의 0건 수준</h3>
         <p class="case-desc">배송 제약 상품이 일반 품절처럼 인식되어 동일 문의가 반복되던 구조를 확인하고, <strong>장바구니 단계의 안내 문구·노출 조건을 개선안으로 정리</strong>해 개발팀에 제안했습니다.</p>
         <div class="case-meta">
           <span class="case-result">일 6~10건 → 0건 수준</span>
@@ -875,25 +875,25 @@
     <div class="case-detail" id="case1">
       <div class="detail-head">
         <span class="detail-head-no">Case 01</span>
-        <h3>배송 제약 VOC를 UX 개선안으로 전환 — 개발팀 제안·당일 구현·반복 문의 0건 수준</h3>
+        <h3>배송일 충돌 오인을 줄이기 위한 상품별 안내 구조 개선 — 개발팀 제안·당일 구현</h3>
         <button class="modal-close" aria-label="닫기">✕</button>
       </div>
       <div class="detail-body">
         <div class="detail-section">
           <h4>Problem</h4>
-          <p>배송 가능일이 다른 상품이 장바구니에 함께 담기면 주문이 차단됐지만, 고객에게는 그 이유가 충분히 안내되지 않았습니다. 고객은 이를 품절이나 시스템 오류로 인식했고, 동일한 문의가 일 6~10건 반복됐습니다.</p>
-          <p><strong>핵심 문제는 고객의 이해 부족이 아니라, 주문이 막히는 시점에 시스템이 이유를 설명하지 못하는 UX 구조에 있었습니다.</strong></p>
+          <p>배송일 제한 상품이 장바구니에 함께 담기면 기존 시스템 메시지는 여전히 "품절된 상품을 삭제하면 배송일이 표시됩니다"처럼 일반화되어 노출됐습니다.</p>
+          <p><strong>고객 입장에서는 실제 품절인지, 배송 가능일 충돌인지 구분하기 어려운 구조였고</strong>, 이로 인해 동일한 문의가 일 6~10건 반복됐습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">A</span> 최소 개선안 설계</h5>
-          <p>모든 배송일 충돌 케이스를 한 번에 시스템에서 자동 분기하기는 어려웠기 때문에, 먼저 반복 문의가 발생한 특정 요일 배송 상품을 대상으로 최소 개선안을 설계했습니다.</p>
-          <p><strong>고객이 배송 제약 상품을 일반 품절이나 시스템 오류로 오인하지 않도록</strong>, 해당 상품에 주의상품 태그를 적용하고 서버 응답의 subtext 값을 활용해 장바구니에서 안내 문구가 노출되는 구조를 데이터 자료와 함께 개발팀에 제안했습니다. 제안은 즉시 수용되어 당일 구현됐습니다.</p>
+          <h5><span class="step-no">A</span> 최소 실행 단위 개선안 설계</h5>
+          <p>특정 요일에만 도착 가능한 상품에 <strong>상품별 안내 subtext를 노출하도록 개선안을 제안</strong>했습니다. 전체 배송일 산출 로직을 한 번에 바꾸기보다, 고객이 장바구니에서 원인 상품을 확인할 수 있도록 최소 실행 단위로 접근했습니다.</p>
+          <p>해당 상품에 주의상품 태그를 적용하고 서버 응답의 subtext 값을 활용하는 구조로 정리해, 데이터 자료와 함께 개발팀에 제안했습니다. 제안은 즉시 수용되어 당일 구현됐습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">B</span> 운영 기준 확산</h5>
-          <p>해당 subtext 구조는 이후 유사한 안내 케이스에도 적용 가능한 기준으로 확장됐습니다. 단순 문구 추가가 아니라, <strong>고객이 막히는 시점에 필요한 정보를 제공하는 유사 안내 케이스로 확장 적용</strong>됐습니다.</p>
+          <h5><span class="step-no">B</span> 결과 · 유사 상품 확장 적용</h5>
+          <p>그 결과 고객은 "토요일 도착 상품"과 "화요일 도착 상품"처럼 <strong>배송 제약이 있는 상품을 장바구니 안에서 구분</strong>할 수 있게 되었고, 일반 품절로 오인하던 반복 문의를 줄일 수 있었습니다. 해당 subtext 구조는 동일한 배송 제약이 있는 유사 상품에도 확장 적용됐습니다.</p>
         </div>
 
         <div class="detail-result-box">
@@ -905,7 +905,7 @@
           <h4>실제 화면</h4>
           <div class="detail-imgs">
             <figure class="fig"><img src="case3-slack.png" alt="개발팀 제안 Slack 대화" loading="lazy"><figcaption>시스템 구분 가능 여부 확인 → MVP 제안 과정 (Slack)</figcaption></figure>
-            <figure class="fig"><img src="case3-cart.png" alt="장바구니 안내 문구 구현 화면" loading="lazy"><figcaption>당일 구현된 장바구니 주문 불가 사유 안내</figcaption></figure>
+            <figure class="fig"><img src="case3-cart.png?v=2" alt="장바구니 상품별 배송 제약 안내 subtext 구현 화면" loading="lazy"><figcaption>기존 시스템 메시지는 배송일 충돌 사유를 구분하지 못했지만, 상품별 subtext를 노출해 고객이 어떤 상품 때문에 배송일이 맞지 않는지 확인할 수 있도록 개선</figcaption></figure>
           </div>
         </div>
 
