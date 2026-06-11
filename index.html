@@ -467,9 +467,29 @@
     margin-top: 14px;
   }
   .fig { margin: 0; }
-  .fig img { width: 100%; border: 1px solid var(--border); border-radius: 8px; display: block; background: var(--bg-soft); }
+  .fig img { width: 100%; border: 1px solid var(--border); border-radius: 8px; display: block; background: var(--bg-soft); cursor: zoom-in; transition: box-shadow 0.15s; }
+  .fig img:hover { box-shadow: var(--sh-md); }
   .fig figcaption { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; text-align: center; line-height: 1.5; }
   @media (max-width: 720px) { .detail-imgs { grid-template-columns: 1fr; } }
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 14px;
+    padding: 32px; cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 92vw; max-height: 84vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    background: #fff;
+  }
+  .lightbox .lb-caption { color: rgba(255,255,255,0.85); font-size: 13.5px; text-align: center; max-width: 720px; line-height: 1.5; }
+  .lightbox .lb-hint { color: rgba(255,255,255,0.45); font-size: 11.5px; }
   @media (max-width: 720px) {
     .detail-body { padding: 24px 22px; }
     .detail-head { padding: 22px 22px; grid-template-columns: 1fr; gap: 10px; }
@@ -1162,6 +1182,13 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="확대 이미지" id="lightboxImg">
+  <div class="lb-caption" id="lightboxCaption"></div>
+  <div class="lb-hint">클릭하거나 ESC를 누르면 닫힙니다</div>
+</div>
+
 <script>
   // ===== 모달 시스템 =====
   const backdrop = document.getElementById('modalBackdrop');
@@ -1200,8 +1227,33 @@
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && backdrop.classList.contains('open')) closeModal();
+    if (e.key === 'Escape' && backdrop.classList.contains('open') && !lightbox.classList.contains('open')) closeModal();
   });
+
+  // ===== 라이트박스 (증빙 사진 확대) =====
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  document.querySelectorAll('.fig img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      const cap = img.closest('.fig')?.querySelector('figcaption');
+      lightboxCaption.textContent = cap ? cap.textContent : '';
+      lightbox.classList.add('open');
+    });
+  });
+
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      e.stopPropagation();
+      lightbox.classList.remove('open');
+    }
+  }, true);
 </script>
 
 </body>
