@@ -875,7 +875,7 @@
     <div class="case-detail" id="case1">
       <div class="detail-head">
         <span class="detail-head-no">Case 01</span>
-        <h3>배송 제약 VOC를 Fail-soft UX로 전환 — 개발팀 제안·당일 구현·반복 문의 0건 수준</h3>
+        <h3>배송 제약 VOC를 UX 개선안으로 전환 — 개발팀 제안·당일 구현·반복 문의 0건 수준</h3>
         <button class="modal-close" aria-label="닫기">✕</button>
       </div>
       <div class="detail-body">
@@ -886,9 +886,9 @@
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">A</span> Fail-soft UX 설계</h5>
-          <p>모든 예외 조건을 시스템에서 완벽히 분기하기는 어려웠기 때문에, API 응답값으로 판단 가능한 조건만 남겨 최소 실행 단위의 개선안을 설계했습니다.</p>
-          <p><strong>고객이 주문 불가 사유를 오인하지 않도록</strong> 장바구니 내 안내 문구와 노출 조건을 개선안으로 정리했고, 데이터 자료와 함께 개발팀에 제안했습니다. 제안은 즉시 수용되어 당일 구현됐습니다.</p>
+          <h5><span class="step-no">A</span> 최소 개선안 설계</h5>
+          <p>모든 배송일 충돌 케이스를 한 번에 시스템에서 자동 분기하기는 어려웠기 때문에, 먼저 반복 문의가 발생한 특정 요일 배송 상품을 대상으로 최소 개선안을 설계했습니다.</p>
+          <p><strong>고객이 배송 제약 상품을 일반 품절이나 시스템 오류로 오인하지 않도록</strong>, 해당 상품에 주의상품 태그를 적용하고 서버 응답의 subtext 값을 활용해 장바구니에서 안내 문구가 노출되는 구조를 데이터 자료와 함께 개발팀에 제안했습니다. 제안은 즉시 수용되어 당일 구현됐습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
