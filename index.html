@@ -721,7 +721,7 @@
     <h2 class="section-title">고객의 문제를 제품의 기회로 바꾸는 사람,<br>모르는 도메인을 고객 언어로 번역하는 사람</h2>
     <div class="about-body">
       <p>CX는 고객 접점에서 발견한 문제를 제품·운영 구조로 바꾸는 일이라고 생각합니다. 고객 화면만 바꾸는 일이 아니라, <strong>문의 이후 데이터가 어떤 상태로 남고, 누가 확인하며, 어떤 기준으로 고객에게 안내되는지까지 설계하는 일</strong>이라고 봅니다. 저는 <strong>고객의 반복 문의에서 패턴을 읽고, 그것을 제품·운영 개선 과제로 바꾸는 방식</strong>으로 일해왔습니다.</p>
-      <p>배송 VOC 패턴에서는 UX 구조 문제를 재정의해 개발팀에 개선안을 제안했고, 당일 구현으로 연결했습니다. 그 결과 관련 반복 인입은 <strong>0건 수준</strong>으로 줄었습니다. 자유 텍스트에 묻혀 있던 환불·교환 의도는 필수 선택값으로 구조화해, AS 재확인 왕복을 95% 이상 줄였습니다.</p>
+      <p>배송 VOC 패턴에서는 UX 구조 문제를 재정의해 개발팀에 개선안을 제안했고, 당일 구현으로 연결했습니다. 그 결과 관련 반복 인입은 <strong>0건 수준</strong>으로 줄었습니다. 자유 텍스트에 묻혀 있던 환불·교환 의도는 입력 단계에서 필수 선택값으로 구조화해, 담당자가 고객 의도를 다시 확인하는 왕복을 줄였습니다.</p>
       <p><strong>초록마을에서는 B2C 고객 VOC를 제품·운영 개선 과제로 연결했고, 카카오VX에서는 제휴사별로 상이하게 관리되던 예약·취소·위약 기준을 표준화해 상담 및 운영 판단 기준으로 정리했습니다.</strong></p>
       <p>처음 접하는 도메인 앞에서도 멈추지 않습니다. 택배 표준약관과 물류 계약서도 처음이었지만, Claude로 쟁점을 정리하고 NotebookLM으로 원문을 교차 확인해 정산·배상 판단 근거를 만들었습니다. 복잡한 예외와 판단 기준이 많은 환경에서는 처리 기준과 에스컬레이션 구조를 정리해 유관 리더와 협의했고, 내부 공통 운영 기준으로 적용했습니다.</p>
       <p><strong>어려운 지식을 빠르게 파악해 고객이 이해할 수 있는 언어로 바꾸는 것.</strong> 그것이 제가 새로운 도메인에 들어가는 방식입니다.</p>
@@ -764,9 +764,9 @@
         <div class="result-d">일 6~10건 → 0건 수준<br>VOC 분석 → 개선안 제안 → 당일 구현</div>
       </div>
       <div class="result-cell">
-        <div class="result-n">95% 이상</div>
-        <div class="result-l">재확인 왕복 감소</div>
-        <div class="result-d">자유 텍스트 → 필수 선택값 구조화<br>고객 의도 기반 입력 구조 개선</div>
+        <div class="result-n">선택값화</div>
+        <div class="result-l">재확인 왕복 해소</div>
+        <div class="result-d">자유 텍스트 → 필수 선택값<br>입력 단계 개선 → 처리 기준 명확화</div>
       </div>
       <div class="result-cell">
         <div class="result-n">14.7배</div>
@@ -811,10 +811,10 @@
           <span class="case-tag">서비스 기획</span>
           <span class="case-tag">유관부서 협업</span>
         </div>
-        <h3>고객 의도 기반 환불·교환 입력 구조 재설계 — 재확인 왕복 95% 이상 감소</h3>
-        <p class="case-desc">자유 텍스트에 묻혀 있던 고객 의도를 <strong>필수 선택값으로 구조화</strong>해 응대 단계의 재확인 왕복을 줄이고, CRM 상태값 기준도 함께 정리했습니다.</p>
+        <h3>고객 의도 기반 환불·교환 입력 구조 재설계 — 재확인 왕복 해소</h3>
+        <p class="case-desc">환불·교환 의도가 자유 텍스트에 묻혀 담당자가 다시 확인해야 하던 구조를, <strong>입력 단계의 필수 선택값으로 개선</strong>했습니다. CRM 상태값 기준도 함께 정리했습니다.</p>
         <div class="case-meta">
-          <span class="case-result">왕복 95% 이상 감소</span>
+          <span class="case-result">재확인 왕복 해소 · 처리 기준 명확화</span>
           <span class="case-more">자세히 보기 →</span>
         </div>
       </a>
@@ -923,7 +923,7 @@
     <div class="case-detail" id="case2">
       <div class="detail-head">
         <span class="detail-head-no">Case 02</span>
-        <h3>고객 의도 기반 환불·교환 입력 구조 재설계 — AS 재확인 왕복 95%+ 감소</h3>
+        <h3>고객 의도 기반 환불·교환 입력 구조 재설계 — 재확인 왕복 해소</h3>
         <button class="modal-close" aria-label="닫기">✕</button>
       </div>
       <div class="detail-body">
@@ -950,11 +950,11 @@
 
         <div class="detail-section exec-block">
           <h5><span class="step-no">D</span> 결과</h5>
-          <p>입력 단계에서 의도가 구조화되니 <strong>응대 단계의 재확인 왕복이 95% 이상 감소</strong>했고, 후속 처리 기준이 명확해졌습니다.</p>
+          <p>문의 등록 단계에서 의도가 구조화되니 <strong>후속 처리자가 고객 의도를 다시 확인하는 왕복이 줄었고</strong>, 처리 기준이 명확해졌습니다.</p>
         </div>
 
         <div class="detail-result-box">
-          <div class="big">AS 재확인 왕복 95%+ 감소</div>
+          <div class="big">재확인 왕복 해소 · 처리 기준 명확화</div>
           <div class="desc">자유 텍스트 → 필수 선택값 구조화 · 중복 DB 필드 활용으로 개발 범위 최소화</div>
         </div>
 
