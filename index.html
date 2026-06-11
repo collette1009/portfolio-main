@@ -810,7 +810,7 @@
           <span class="case-tag">유관부서 협업</span>
         </div>
         <h3>고객 의도 기반 환불·교환 입력 구조 재설계 — 재확인 왕복 해소</h3>
-        <p class="case-desc">환불·교환 의도가 자유 텍스트에 묻혀 담당자가 다시 확인해야 하던 구조를, <strong>CRM 입력 단계의 필수 선택값으로 개선</strong>했습니다.</p>
+        <p class="case-desc">환불·교환 의도가 자유 텍스트에 묻혀 담당자가 다시 확인해야 하던 구조를, <strong>1:1 문의 접수 단계의 해결방법 선택값으로 구조화하고 CRM 필드에 연결</strong>했습니다.</p>
         <div class="case-meta">
           <span class="case-result">재확인 왕복 해소 · 처리 기준 명확화</span>
           <span class="case-more">자세히 보기 →</span>
@@ -927,28 +927,28 @@
       <div class="detail-body">
         <div class="detail-section">
           <h4>Problem</h4>
-          <p>환불·교환 사유가 자유 텍스트로 입력되던 구조였습니다. <strong>고객의 진짜 의도가 자유 텍스트 안에 묻혀</strong> 응대 단계에서 다시 확인해야 하는 왕복이 누적되고 있었습니다.</p>
-          <p>고객이 본인 의도를 정확히 풀어 쓰지 않으면 처리 담당자는 안전한 선택을 위해 추가 확인을 해야 했고, 그만큼 리드타임이 길어졌습니다.</p>
+          <p>환불·교환 등 <strong>고객이 원하는 해결방법이 별도 선택값으로 분리되어 있지 않아</strong>, 자유 텍스트 안에서 고객 의도를 다시 확인해야 하는 구조였습니다.</p>
+          <p>고객 의사 확인 없이 임의 처리할 경우 분쟁 리스크가 있어, 문의 접수 단계에서 고객이 원하는 해결방법을 먼저 선택하도록 하는 구조가 필요했습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">A</span> 자유 텍스트 → 필수 선택값 구조화</h5>
-          <p>고객 의도를 빈도순으로 분석해, <strong>CRM 입력 필드를 의도 기반 필수 선택값으로 재구성</strong>했습니다. 입력 단계에서 의도가 정해지니 응대 단계의 재확인이 필요한 시점이 사라졌습니다.</p>
+          <h5><span class="step-no">A</span> 1:1 문의 접수 단계 해결방법 선택값화</h5>
+          <p><strong>1:1 문의 화면에 환불·교환 등 해결방법 선택 필드를 추가</strong>하고, 해당 값이 CRM의 해결방법 필드로 노출되도록 개선안을 정리했습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">B</span> 중복 DB 필드 활용 · 개발 범위 최소화</h5>
-          <p>새 컬럼을 만들지 않고 <strong>중복 활용 가능한 DB 필드를 활용하는 스펙</strong>을 직접 설계해 개발 범위를 최소화했고, 빠르게 반영 가능한 형태로 유관부서와 협의했습니다.</p>
+          <h5><span class="step-no">B</span> 기존 CRM 영역 활용 · 개발 범위 최소화</h5>
+          <p>CRM에서 답변 작성일과 중복되는 <strong>'확인일시' 영역을 활용해, 별도 개발 범위를 늘리지 않고 '해결방법' 필드로 대체하는 방향</strong>을 제안했습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
           <h5><span class="step-no">C</span> 결과</h5>
-          <p>문의 등록 단계에서 의도가 구조화되니 <strong>후속 처리자가 고객 의도를 다시 확인하는 왕복이 줄었고</strong>, 처리 기준이 명확해졌습니다.</p>
+          <p>그 결과 <strong>고객 의도 확인을 위한 추가 답변 왕복을 줄이고</strong>, 후속 처리 기준을 더 명확히 만들 수 있었습니다.</p>
         </div>
 
         <div class="detail-result-box">
           <div class="big">재확인 왕복 해소 · 처리 기준 명확화</div>
-          <div class="desc">자유 텍스트 → 필수 선택값 구조화 · 중복 DB 필드 활용으로 개발 범위 최소화</div>
+          <div class="desc">자유 텍스트 → 해결방법 선택값 구조화 · 기존 CRM 영역 활용으로 개발 범위 최소화</div>
         </div>
 
         <div class="detail-section" style="margin-top: 28px;">
