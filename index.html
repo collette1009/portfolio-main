@@ -1080,51 +1080,51 @@
     <div class="case-detail" id="case5">
       <div class="detail-head">
         <span class="detail-head-no">Case 05</span>
-        <h3>AI·자동화 기반 운영 효율화 — 반복 입력·집계·조회·문서화 비용 축소</h3>
+        <h3>AI·자동화 기반 운영 효율화 — 반복 처리 7→1단계 축소와 내부 조회 구조 개선</h3>
         <button class="modal-close" aria-label="닫기">✕</button>
       </div>
       <div class="detail-body">
         <div class="detail-section">
           <h4>Problem</h4>
-          <p>· 대량 처리 시 동일 항목을 반복 입력해야 했고, 처리 건수가 늘어날수록 입력 피로도와 기준값 오류 가능성이 커졌습니다.</p>
-          <p>· 귀책대상·처리 사유처럼 후속 정산·집계에 연결되는 값은 한 번 잘못 입력되면 운영 데이터 전체가 왜곡될 수 있었습니다.</p>
-          <p>· VOC 분류·집계·운영 기준 문서화 등 반복 업무에 시간이 많이 들고, 기준이 사람마다 조금씩 달라지는 문제도 있었습니다.</p>
-          <p>· 상품 문의·품질 이슈 처리 시 담당 MD와 상품코드를 확인하려면 매번 엑셀이나 별도 시스템을 열어야 했습니다.</p>
+          <p>대량 AS/재배송·반품 처리 시 동일 항목을 반복 입력해야 했고, 처리 건수가 늘어날수록 입력 피로도와 기준값 오류 가능성이 커졌습니다. 특히 귀책 대상, 처리 사유, 보상 기준처럼 후속 정산·집계에 연결되는 값은 한 번 잘못 입력되면 운영 데이터 전체가 왜곡될 수 있었습니다.</p>
+          <p>또한 상품 문의나 품질 이슈 처리 시 담당 MD와 상품코드를 확인하려면 매번 엑셀이나 별도 자료를 열어야 했고, 반복 조회와 이관 과정에서 처리 시간이 누적됐습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">A</span> 반복 입력·집계 자동화</h5>
-          <p>Chrome Extension을 직접 구현해 재배송·반품 등록 시 주요 항목이 단축키 한 번으로 자동 입력되도록 설계했습니다. <strong>반복 처리 동선을 7단계에서 1단계로</strong> 줄였습니다.</p>
-          <p>Apps Script로 운영 현황 리포트의 자동 분류 구조를 구축했고, Excel VBA로 중복 감지·자동 합산·대표행 집계 처리를 정리했습니다. JavaScript 북마클릿으로는 결품·미출 SMS 발송 준비 동선을 7단계에서 3단계로 줄였습니다.</p>
+          <h5><span class="step-no">A</span> 반복 처리 자동화 — 7단계 → 1단계</h5>
+          <p>Claude의 도움을 받아 Chrome Extension을 구현하고, AS/재배송·반품 등록 시 반복 입력되는 주요 항목이 단축키 한 번으로 자동 입력되도록 설계했습니다. 기존에는 주문 확인, 값 입력, 사유 선택, 상태 변경 등 여러 단계를 반복해야 했지만, 반복 입력 구간을 자동화해 <strong>처리 동선을 7단계에서 1단계로</strong> 줄였습니다.</p>
+          <p>해당 방식으로 AS/재배송 1,151건 이상을 처리했으며, 이후 반복 업무에도 계속 활용하고 있습니다.</p>
+          <p>다만 모든 단계를 자동화하지는 않았습니다. 귀책 판단, 예외 케이스 확인, 최종 등록처럼 비용·정산·고객 안내에 영향을 주는 구간은 담당자가 직접 확인하도록 남겨 오류 리스크를 낮췄습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">B</span> Slack 기반 내부 조회 인터페이스 구축</h5>
-          <p>Slack API + Apps Script로 <strong>/담당자 슬래시 커맨드 조회 인터페이스</strong>를 구축했습니다. 상품명 일부 또는 상품코드를 입력하면 담당 MD와 상품코드가 즉시 조회되고, 결과는 입력자에게만 노출되도록 구성해 업무 채널에 배포했습니다. 상품 문의 이관 시 매번 엑셀·시스템을 열던 내부 조회 동선을 단축했습니다.</p>
+          <h5><span class="step-no">B</span> Slack 기반 내부 조회 구조 구축</h5>
+          <p>상품 문의나 품질 이슈 처리 시 담당 MD와 상품코드를 확인하는 과정도 반복적으로 발생했습니다. 기존에는 엑셀이나 별도 자료를 열어 검색해야 했기 때문에, 문의 이관 전 확인 시간이 계속 누적됐습니다.</p>
+          <p>Slack API와 Apps Script를 활용해 <strong>/담당자 슬래시 커맨드 조회 인터페이스</strong>를 구축했습니다. 상품명 일부 또는 상품코드를 입력하면 담당 MD와 상품코드가 즉시 조회되고, 결과는 입력자에게만 노출되도록 구성했습니다.</p>
+          <p>이를 통해 상품 문의 이관 전 내부 조회 동선을 줄이고, 담당자 확인 기준을 팀원들이 동일하게 사용할 수 있도록 정리했습니다.</p>
         </div>
 
         <div class="detail-section exec-block">
-          <h5><span class="step-no">C</span> 리스크 구간은 사람에게 남김</h5>
-          <p><strong>귀책 판단, 예외 케이스 확인, 최종 등록</strong>처럼 비용·정산·고객 안내에 영향을 주는 구간은 담당자가 직접 확인하도록 남겼습니다.</p>
-          <p>자동화의 목적을 단순 속도가 아니라 <strong>반복 오류를 줄이고 기준값을 표준화하는 데</strong> 두었습니다.</p>
+          <h5><span class="step-no">C</span> AI를 실무 파트너로 활용</h5>
+          <p>Claude, ChatGPT, NotebookLM은 운영 기준 정리, 자동화 로직 설계 보조, 디버깅, 리스크 표현 검토, VOC 분류와 문서 초안 작성에 활용했습니다.</p>
+          <p>AI가 만든 결과를 그대로 사용하는 방식이 아니라, 실제 정책·원문·운영 데이터와 대조해 검수하는 방식으로 사용했습니다. 이 활용성을 인정받아 <strong>AI 도구를 공식 업무 도구로 승인받아</strong> 실무에 적용했습니다.</p>
         </div>
 
-        <div class="detail-section exec-block">
-          <h5><span class="step-no">D</span> AI를 실무 파트너로 활용</h5>
-          <p>Claude는 운영 기준 정리, 자동화 로직 설계 보조, 디버깅, 리스크 표현 검토에 사용했습니다. NotebookLM과 GPT는 VOC 분류, 약관·계약 원문 교차 확인, 운영 기준 초안 작성에 활용했습니다.</p>
-          <p>단순히 AI 답변을 쓰는 것이 아니라, <strong>운영 기준을 더 빠르고 정확하게 만드는 실무 파트너</strong>로 활용했습니다. 이 활용성을 인정받아 비개발 직군에서도 AI 업무비를 공식 승인받았습니다.</p>
+        <div class="detail-section">
+          <h4>Result</h4>
+          <p>반복 입력 업무는 7단계에서 1단계로 줄였고, AS/재배송 1,151건 이상을 처리하는 데 활용했습니다. 내부 조회 업무는 Slack 명령어 기반으로 전환해 담당 MD·상품코드 확인 동선을 단축했습니다.</p>
+          <p>자동화 대상과 사람의 판단이 필요한 구간을 분리해, 처리 속도뿐 아니라 기준값 일관성과 오류 감소까지 함께 개선했습니다.</p>
         </div>
 
         <div class="detail-result-box">
           <div class="big">7→1단계 · AS/재배송 1,151건 처리</div>
-          <div class="desc">반복 입력 시간 단축 · 기준값 오류 감소 · 내부 조회 동선 단축 · 운영 기준 문서화 속도 향상</div>
+          <div class="desc">반복 입력 동선 단축 · 기준값 일관성 개선 · 내부 조회 구조 전환 · AI 공식 업무 도구 승인</div>
         </div>
 
         <div class="detail-section" style="margin-top: 28px;">
           <h4>실제 화면</h4>
           <div class="detail-imgs">
             <figure class="fig"><img src="case1-admin.png" alt="Chrome Extension 반품 자동입력 화면" loading="lazy"><figcaption>Chrome Extension — 반품 등록 주요 항목 자동 입력 (실제 화면)</figcaption></figure>
-            <figure class="fig"><img src="case1-announce.png" alt="미출 문자 자동화 기능 공유 메시지" loading="lazy"><figcaption>미출 안내 문자 자동화 — 사용 안내 공유 (Slack)</figcaption></figure>
             <figure class="fig fig-wide"><img src="case5-deploy.png" alt="담당자 조회 기능 배포 공지" loading="lazy"><figcaption>/담당자 슬래시 커맨드 — 사내 배포 공지 (Slack)</figcaption></figure>
             <figure class="fig fig-compact"><img src="case5-bot-result.png" alt="담당자봇 조회 결과 화면" loading="lazy"><figcaption>/담당자 조회 결과 — 담당 MD·상품코드 즉시 확인</figcaption></figure>
           </div>
@@ -1133,12 +1133,11 @@
         <div class="detail-section" style="margin-top: 28px;">
           <h4>Insight</h4>
           <p>· 자동화의 목적은 속도가 아니라, 기준값 일관성과 오류 감소입니다.</p>
-          <p>· 모든 단계를 자동화하지 않고 리스크 구간은 사람에게 남기는 것이 운영의 안정성을 만듭니다.</p>
-          <p>· AI는 답을 주는 도구가 아니라, 운영 기준을 정확하게 정리하는 데 쓰는 실무 파트너입니다.</p>
+          <p>· 모든 단계를 자동화하지 않고 리스크 구간은 사람에게 남기는 것이 운영 안정성을 만듭니다.</p>
+          <p>· AI는 답을 대신하는 도구가 아니라, 운영 기준을 더 빠르고 정확하게 정리하기 위한 실무 파트너입니다.</p>
         </div>
       </div>
     </div>
-
 </div><!-- /.modal-backdrop -->
 
 <!-- SKILLS -->
