@@ -460,6 +460,11 @@
     font-size: 14px;
     color: var(--ink-3);
   }
+  .case-evidence { margin: 24px 0; }
+  .case-evidence figure { margin: 0 0 16px; }
+  .case-evidence figure:last-child { margin-bottom: 0; }
+  .case-evidence img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); }
+  .case-evidence figcaption { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
   @media (max-width: 720px) {
     .detail-body { padding: 24px 22px; }
     .detail-head { padding: 22px 22px; grid-template-columns: 1fr; gap: 10px; }
@@ -852,6 +857,17 @@
           <p>해당 subtext 구조는 이후 유사한 안내 케이스에도 적용 가능한 기준으로 확장됐습니다. 단순 문구 추가가 아니라, <strong>고객이 막히는 시점에 필요한 정보를 제공하는 유사 안내 케이스로 확장 적용</strong>됐습니다.</p>
         </div>
 
+        <div class="case-evidence">
+          <figure>
+            <img src="../case3-cart.png" alt="장바구니 안내 문구 적용 화면">
+            <figcaption>실제 적용된 장바구니 subtext 안내 화면</figcaption>
+          </figure>
+          <figure>
+            <img src="../case3-slack.png" alt="개발팀과의 Slack 협업 논의">
+            <figcaption>개발팀과 주고받은 협업 논의 (Slack)</figcaption>
+          </figure>
+        </div>
+
         <div class="detail-result-box">
           <div class="big">일 6~10건 → 0건 수준</div>
           <div class="desc">반복 문의 해소 · 개발팀 제안·당일 구현 · 유사 케이스로 확장 적용</div>
@@ -893,6 +909,21 @@
         <div class="detail-section exec-block">
           <h5><span class="step-no">C</span> 결과</h5>
           <p>입력 단계에서 의도가 구조화되니 <strong>응대 단계의 재확인 왕복이 95% 이상 감소</strong>했고, 환불·교환 처리 리드타임이 단축됐습니다.</p>
+        </div>
+
+        <div class="case-evidence">
+          <figure>
+            <img src="../case2-solution-field.png" alt="원하는 해결방법 선택 필드 추가 화면">
+            <figcaption>입력 단계에 추가된 '원하는 해결방법' 선택 필드</figcaption>
+          </figure>
+          <figure>
+            <img src="../case2-crm-compare.png" alt="CRM 필드 개선 전후 비교">
+            <figcaption>CRM 응대 화면 개선 전(BEFORE) · 후(AFTER) 비교</figcaption>
+          </figure>
+          <figure>
+            <img src="../case2-slack.png" alt="유관부서와의 Slack 협업 논의">
+            <figcaption>유관부서와 주고받은 협업 논의 (Slack)</figcaption>
+          </figure>
         </div>
 
         <div class="detail-result-box">
@@ -976,6 +1007,17 @@
           <p>물류 계약서를 다시 검토하는 과정에서 <strong>기존 운영에서 활용되지 않던 선공제 조항</strong>을 확인했습니다. 해당 조항을 근거로 피해 유형, 비용 항목, 정산 기준을 재정리했고, CEO 보고를 거쳐 공통 운영 기준으로 정리했습니다.</p>
         </div>
 
+        <div class="case-evidence">
+          <figure>
+            <img src="../case4-contract.png" alt="계약서 기준 정리 협업 논의">
+            <figcaption>계약서 기준으로 배상 범위를 정리한 협업 논의</figcaption>
+          </figure>
+          <figure>
+            <img src="../case4-damage.png" alt="피해 현황 집계 자료">
+            <figcaption>3PL 피해 현황 집계 자료 공유</figcaption>
+          </figure>
+        </div>
+
         <div class="detail-result-box">
           <div class="big">배상 회수액 14.7배 · 비용 차감 기준 정리</div>
           <div class="desc">월 50만 원 → 700만 원. AI로 쟁점을 정리하고 원문으로 근거를 확인해, 처음 접한 도메인을 협상 가능한 운영 기준으로 전환</div>
@@ -1013,10 +1055,32 @@
           <p>다만 모든 단계를 자동화하지는 않았습니다. 귀책 판단, 예외 케이스 확인, 최종 등록처럼 비용·정산·고객 안내에 영향을 주는 구간은 담당자가 직접 확인하도록 남겨 오류 리스크를 낮췄습니다.</p>
         </div>
 
+        <div class="case-evidence">
+          <figure>
+            <img src="../case1-admin.png" alt="반품 자동입력 완료 화면">
+            <figcaption>Chrome Extension으로 자동 입력된 반품 등록 화면</figcaption>
+          </figure>
+          <figure>
+            <img src="../case1-announce.png" alt="미출 문자 자동화 기능 안내">
+            <figcaption>Apps Script 기반 미출 문자 자동화 안내</figcaption>
+          </figure>
+        </div>
+
         <div class="detail-section exec-block">
           <h5><span class="step-no">B</span> Slack 기반 내부 조회 구조 구축</h5>
           <p>상품 문의나 품질 이슈 처리 시 담당 MD와 상품코드를 확인하는 과정도 반복적으로 발생했습니다. 기존에는 엑셀이나 별도 자료를 열어 검색해야 했기 때문에, 문의 이관 전 확인 시간이 계속 누적됐습니다.</p>
           <p>Slack API와 Apps Script를 활용해 <strong>/담당자 슬래시 커맨드 조회 인터페이스</strong>를 구축했습니다. 상품명 일부 또는 상품코드를 입력하면 담당 MD와 상품코드가 즉시 조회되고, 결과는 입력자에게만 노출되도록 구성했습니다.</p>
+        </div>
+
+        <div class="case-evidence">
+          <figure>
+            <img src="../case5-bot-result.png" alt="담당자 조회 봇 결과 화면">
+            <figcaption>/담당자 명령어로 조회한 결과 화면</figcaption>
+          </figure>
+          <figure>
+            <img src="../case5-deploy.png" alt="담당자 조회 기능 사용 안내">
+            <figcaption>담당 MD·상품코드 조회 기능 사용 안내</figcaption>
+          </figure>
         </div>
 
         <div class="detail-section exec-block">
