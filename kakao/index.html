@@ -460,20 +460,23 @@
     font-size: 14px;
     color: var(--ink-3);
   }
-  .case-evidence { margin: 24px 0; }
-  .case-evidence figure { margin: 0 0 16px; text-align: center; position: relative; display: inline-block; width: 100%; }
+  .case-evidence { margin: 24px 0; text-align: center; }
+  .case-evidence figure { margin: 0 0 16px; display: inline-block; position: relative; max-width: 420px; width: 100%; }
   .case-evidence figure:last-child { margin-bottom: 0; }
-  .case-evidence img { max-width: 420px; width: 100%; display: inline-block; border-radius: 8px; border: 1px solid var(--border); cursor: zoom-in; transition: opacity 0.15s; }
+  .case-evidence img { max-width: 420px; width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); cursor: zoom-in; transition: opacity 0.15s; }
   .case-evidence img:hover { opacity: 0.85; }
-  .case-evidence .zoom-btn {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 44px; height: 44px; border-radius: 50%;
-    background: rgba(20,20,24,0.65); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; opacity: 0; transition: opacity 0.15s;
+  .case-evidence .zoom-label {
+    position: absolute; top: 10px; right: 10px;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(20,20,24,0.78); color: #fff;
+    font-size: 12px; font-weight: 600; letter-spacing: -0.01em;
+    padding: 6px 12px; border-radius: 100px;
     pointer-events: none;
   }
-  .case-evidence figure:hover .zoom-btn { opacity: 1; }
+  .case-evidence .zoom-label::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: #4dabf7; flex-shrink: 0;
+  }
   .case-evidence figcaption { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
   .img-lightbox {
     position: fixed; inset: 0; z-index: 200;
@@ -879,12 +882,12 @@
         <div class="case-evidence">
           <figure>
             <img src="../case3-cart.png" alt="장바구니 안내 문구 적용 화면">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>실제 적용된 장바구니 subtext 안내 화면</figcaption>
           </figure>
           <figure>
             <img src="../case3-slack.png" alt="개발팀과의 Slack 협업 논의">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>개발팀과 주고받은 협업 논의 (Slack)</figcaption>
           </figure>
         </div>
@@ -935,17 +938,17 @@
         <div class="case-evidence">
           <figure>
             <img src="../case2-solution-field.png" alt="원하는 해결방법 선택 필드 추가 화면">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>입력 단계에 추가된 '원하는 해결방법' 선택 필드</figcaption>
           </figure>
           <figure>
             <img src="../case2-crm-compare.png" alt="CRM 필드 개선 전후 비교">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>CRM 응대 화면 개선 전(BEFORE) · 후(AFTER) 비교</figcaption>
           </figure>
           <figure>
             <img src="../case2-slack.png" alt="유관부서와의 Slack 협업 논의">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>유관부서와 주고받은 협업 논의 (Slack)</figcaption>
           </figure>
         </div>
@@ -1034,12 +1037,12 @@
         <div class="case-evidence">
           <figure>
             <img src="../case4-contract.png" alt="계약서 기준 정리 협업 논의">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>계약서 기준으로 배상 범위를 정리한 협업 논의</figcaption>
           </figure>
           <figure>
             <img src="../case4-damage.png" alt="피해 현황 집계 자료">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>3PL 피해 현황 집계 자료 공유</figcaption>
           </figure>
         </div>
@@ -1084,12 +1087,12 @@
         <div class="case-evidence">
           <figure>
             <img src="../case1-admin.png" alt="반품 자동입력 완료 화면">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>Chrome Extension으로 자동 입력된 반품 등록 화면</figcaption>
           </figure>
           <figure>
             <img src="../case1-announce.png" alt="미출 문자 자동화 기능 안내">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>Apps Script 기반 미출 문자 자동화 안내</figcaption>
           </figure>
         </div>
@@ -1103,12 +1106,12 @@
         <div class="case-evidence">
           <figure>
             <img src="../case5-bot-result.png" alt="담당자 조회 봇 결과 화면">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>/담당자 명령어로 조회한 결과 화면</figcaption>
           </figure>
           <figure>
             <img src="../case5-deploy.png" alt="담당자 조회 기능 사용 안내">
-            <span class="zoom-btn">🔍</span>
+            <span class="zoom-label">클릭하면 크게 보여요</span>
             <figcaption>담당 MD·상품코드 조회 기능 사용 안내</figcaption>
           </figure>
         </div>
