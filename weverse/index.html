@@ -126,9 +126,16 @@
   .case-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 18px; }
   .case-imgs.single { grid-template-columns: 1fr; }
   .case-imgs.triple .fig:first-child { grid-column: 1 / -1; }
-  .fig { background: var(--bg-soft); border-radius: 10px; padding: 9px; }
+  .fig { background: var(--bg-soft); border-radius: 10px; padding: 9px; position: relative; cursor: zoom-in; }
   .fig img { width: 100%; max-height: 230px; object-fit: contain; border-radius: 6px; }
   .fig figcaption { font-size: 11px; color: var(--ink-3); margin-top: 8px; line-height: 1.55; text-align: center; }
+  .fig-zoom-badge { position: absolute; top: 17px; right: 17px; display: flex; align-items: center; gap: 5px; background: var(--charcoal); color: #fff; font-size: 10.5px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2; letter-spacing: -0.01em; }
+  .fig-zoom-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.85; }
+  .lightbox-overlay { position: fixed; inset: 0; background: rgba(15,15,17,0.9); z-index: 200; display: none; align-items: center; justify-content: center; padding: 48px 24px; cursor: zoom-out; }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-overlay img { max-width: 100%; max-height: 88vh; border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); cursor: default; }
+  .lightbox-close { position: fixed; top: 24px; right: 28px; width: 40px; height: 40px; border-radius: 100px; background: rgba(255,255,255,0.12); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 17px; cursor: pointer; z-index: 201; transition: background .15s; }
+  .lightbox-close:hover { background: rgba(255,255,255,0.22); }
   .ba-table { display: flex; align-items: stretch; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
   .ba-col { flex: 1; min-width: 220px; background: var(--bg-soft); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px 18px; }
   .ba-col.after { background: var(--charcoal-a); border-color: var(--ink-1); }
@@ -451,7 +458,7 @@
       </div>
       <div class="shot-label">실제 화면</div>
       <div class="case-imgs single">
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/ChatGPT%20Image%202026%EB%85%84%206%EC%9B%94%2022%EC%9D%BC%20%EC%98%A4%ED%9B%84%2011_42_56.png" alt="ARS 안내 멘트 관리 화면"><figcaption>Matrix Cloud IPCC에서 문의량 증가·연휴·점심시간·업무외시간 등 상황별 ARS 안내 멘트를 작성·운영</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/ChatGPT%20Image%202026%EB%85%84%206%EC%9B%94%2022%EC%9D%BC%20%EC%98%A4%ED%9B%84%2011_42_56.png" alt="ARS 안내 멘트 관리 화면"><figcaption>Matrix Cloud IPCC에서 문의량 증가·연휴·점심시간·업무외시간 등 상황별 ARS 안내 멘트를 작성·운영</figcaption></figure>
       </div>
       <div class="case-block">
         <h4>Insight</h4>
@@ -502,9 +509,9 @@
       </div>
       <div class="shot-label">실제 화면</div>
       <div class="case-imgs triple">
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case2-slack.png" alt="해결방법 선택 필드 제안 Slack 메시지"><figcaption>'원하는 해결방법' 선택 필드 신설 제안 — 유관부서 협의</figcaption></figure>
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case2-solution-field.png" alt="1:1 문의 화면 해결방법 선택 필드"><figcaption>1:1 문의 화면 '원하는 해결방법' 선택 필드</figcaption></figure>
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case2-crm-compare.png?v=2" alt="CRM 화면 Before/After"><figcaption>CRM 화면 Before → After — 선택값이 CRM에서 확인되도록 연결</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-slack.png" alt="해결방법 선택 필드 제안 Slack 메시지"><figcaption>'원하는 해결방법' 선택 필드 신설 제안 — 유관부서 협의</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-solution-field.png" alt="1:1 문의 화면 해결방법 선택 필드"><figcaption>1:1 문의 화면 '원하는 해결방법' 선택 필드</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-crm-compare.png?v=2" alt="CRM 화면 Before/After"><figcaption>CRM 화면 Before → After — 선택값이 CRM에서 확인되도록 연결</figcaption></figure>
       </div>
       <div class="case-block">
         <h4>Insight</h4>
@@ -544,8 +551,8 @@
       </div>
       <div class="shot-label">실제 화면</div>
       <div class="case-imgs">
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case3-slack.png" alt="배송 제약 상품 subtext 개선 제안 Slack 논의"><figcaption>배송 제약 상품 subtext 개선 제안 과정</figcaption></figure>
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case3-cart.png?v=2" alt="장바구니 상품별 배송 제약 안내 subtext 구현 화면"><figcaption>상품별 subtext를 노출해 어떤 상품 때문에 배송일이 맞지 않는지 확인할 수 있도록 개선</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case3-slack.png" alt="배송 제약 상품 subtext 개선 제안 Slack 논의"><figcaption>배송 제약 상품 subtext 개선 제안 과정</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case3-cart.png?v=2" alt="장바구니 상품별 배송 제약 안내 subtext 구현 화면"><figcaption>상품별 subtext를 노출해 어떤 상품 때문에 배송일이 맞지 않는지 확인할 수 있도록 개선</figcaption></figure>
       </div>
       <div class="case-block">
         <h4>Insight</h4>
@@ -649,9 +656,9 @@
       </div>
       <div class="shot-label">실제 화면</div>
       <div class="case-imgs triple">
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case1-admin.png" alt="Chrome Extension 반품 자동입력 화면"><figcaption>Chrome Extension — 반품 등록 주요 항목 자동 입력</figcaption></figure>
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case5-deploy.png" alt="담당자봇 사내 배포 공지"><figcaption>/담당자 슬래시 커맨드 — 사내 배포 공지</figcaption></figure>
-        <figure class="fig"><img src="https://collette1009.github.io/portfolio-main/kakao/case5-bot-result.png" alt="담당자봇 조회 결과 화면"><figcaption>/담당자 조회 결과 — 담당 MD·상품코드 즉시 확인</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case1-admin.png" alt="Chrome Extension 반품 자동입력 화면"><figcaption>Chrome Extension — 반품 등록 주요 항목 자동 입력</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case5-deploy.png" alt="담당자봇 사내 배포 공지"><figcaption>/담당자 슬래시 커맨드 — 사내 배포 공지</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case5-bot-result.png" alt="담당자봇 조회 결과 화면"><figcaption>/담당자 조회 결과 — 담당 MD·상품코드 즉시 확인</figcaption></figure>
       </div>
       <div class="case-block">
         <h4>Insight</h4>
@@ -722,6 +729,11 @@
   </div>
 </div>
 
+<div class="lightbox-overlay" id="lightbox" onclick="closeOnLightboxOverlay(event)">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script>
   function openModal(id) {
     document.getElementById(id).classList.add('open');
@@ -734,11 +746,28 @@
   function closeOnOverlay(e, id) {
     if (e.target.id === id) closeModal(id);
   }
+  function openLightbox(figEl, e) {
+    if (e) e.stopPropagation();
+    var img = figEl.querySelector('img');
+    var lbImg = document.getElementById('lightboxImg');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeOnLightboxOverlay(e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+  }
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.open').forEach(function(m){
         m.classList.remove('open');
       });
+      closeLightbox();
       document.body.style.overflow = '';
     }
   });
