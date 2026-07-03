@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오희은 | 고위드 CX·Business Operations Portfolio</title>
+<meta name="description" content="운영 프로세스 구조화 · VOC 분석 · 반복 업무 자동화 · 파트너 협업 · AI 기반 업무 효율화">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #F7F7F8;
+    --border: rgba(20,20,22,0.1);
+    --ink-1: #141416;
+    --ink-2: #50505A;
+    --ink-3: #909098;
+    --charcoal: #282D32;
+    --charcoal-2: #34383E;
+    --charcoal-a: rgba(40,45,50,0.07);
+    --r: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+    color: var(--ink-1);
+    background: var(--bg);
+    font-size: 15.5px;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 96px 0; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 17px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-size: 15.5px; font-weight: 800; color: var(--ink-1); letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 13.5px; font-weight: 600; color: var(--ink-3); transition: color .15s; }
+  .nav-links a:hover { color: var(--ink-1); }
+
+  /* HERO */
+  .hero {
+    padding: 130px 0 100px;
+    background-image: radial-gradient(rgba(20,20,22,0.09) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .hero-tag { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 26px; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); }
+  .hero h1 { font-size: 50px; font-weight: 800; letter-spacing: -0.03em; color: var(--ink-1); margin-bottom: 14px; }
+  .hero-role { font-size: 16.5px; color: var(--ink-2); font-weight: 500; margin-bottom: 30px; }
+  .hero-lead { font-size: 15px; color: var(--ink-2); line-height: 1.95; max-width: 640px; padding-left: 20px; border-left: 3px solid var(--ink-1); margin-bottom: 40px; }
+  .hero-lead strong { color: var(--ink-1); font-weight: 700; }
+  .hero-cta { display: flex; gap: 12px; }
+  .btn { padding: 13px 26px; border-radius: 100px; font-size: 14px; font-weight: 700; transition: transform .15s, opacity .15s; display: inline-block; }
+  .btn:hover { transform: translateY(-1px); opacity: 0.88; }
+  .btn-dark { background: var(--ink-1); color: #fff; }
+  .btn-line { border: 1.5px solid var(--border); color: var(--ink-2); }
+
+  /* SECTION HEAD */
+  .eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .sec-title { font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.42; color: var(--ink-1); margin-bottom: 44px; }
+
+  /* JD MATCHING TABLE */
+  .match-table { width: 100%; border-collapse: collapse; }
+  .match-table th { background: var(--charcoal); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 20px; text-align: left; }
+  .match-table th:first-child { border-radius: 10px 0 0 0; width: 42%; }
+  .match-table th:last-child { border-radius: 0 10px 0 0; }
+  .match-table td { padding: 13px 20px; font-size: 13.5px; color: var(--ink-2); border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.6; }
+  .match-table tr:last-child td { border-bottom: none; }
+  .match-table tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+  .match-table tr:last-child td:last-child { border-radius: 0 0 10px 0; }
+  .match-table tr:nth-child(odd) td { background: var(--bg-soft); }
+  .match-table tr:nth-child(even) td { background: var(--bg); }
+  .match-table td:first-child { font-weight: 700; color: var(--ink-1); }
+  .match-table td:last-child { color: var(--ink-2); }
+  .table-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+
+  /* KEY RESULTS */
+  .results-section { background: var(--charcoal); padding: 90px 0; }
+  .results-section .eyebrow { color: rgba(255,255,255,0.45); }
+  .results-section .sec-title { color: #fff; margin-bottom: 40px; }
+  .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .result-cell { padding: 22px 18px; background: var(--charcoal-2); border-radius: var(--r); }
+  .result-n { display: inline-block; font-size: 18px; font-weight: 800; color: #fff; background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 7px; margin-bottom: 14px; }
+  .result-l { font-size: 13.5px; font-weight: 700; margin-bottom: 8px; color: #fff; line-height: 1.4; }
+  .result-d { font-size: 11.5px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* CASE CARDS */
+  .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .case-card { border: 1px solid var(--border); border-radius: var(--r); padding: 30px 28px; cursor: pointer; transition: box-shadow .18s, transform .18s, border-color .18s; background: var(--bg); display: flex; flex-direction: column; }
+  .case-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.07); transform: translateY(-3px); border-color: rgba(20,20,22,0.25); }
+  .case-card .case-no { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--ink-3); margin-bottom: 12px; }
+  .case-card h3 { font-size: 17px; font-weight: 700; color: var(--ink-1); line-height: 1.45; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+  .case-tag { font-size: 10.5px; font-weight: 600; color: var(--ink-1); background: var(--charcoal-a); padding: 4px 11px; border-radius: 100px; }
+  .case-card p.blurb { font-size: 13px; color: var(--ink-3); line-height: 1.7; margin-bottom: 18px; flex: 1; }
+  .case-card-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; border-top: 1px solid var(--border); padding-top: 16px; }
+  .case-card-foot .summary { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+  .case-more { font-size: 13px; font-weight: 700; color: var(--ink-1); white-space: nowrap; }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(20,20,22,0.6); z-index: 100; display: none; align-items: flex-start; justify-content: center; padding: 36px 20px; overflow-y: auto; }
+  .modal-overlay.open { display: flex; }
+  .modal-card { background: #fff; border-radius: 16px; max-width: 720px; width: 100%; margin: 0 auto; overflow: hidden; }
+  .modal-head { background: var(--charcoal); padding: 30px 36px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .modal-head .case-no { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
+  .modal-head h2 { font-size: 20px; font-weight: 800; color: #fff; line-height: 1.45; letter-spacing: -0.01em; }
+  .modal-close { flex-shrink: 0; font-size: 16px; color: #fff; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 100px; background: rgba(255,255,255,0.12); transition: background .15s; }
+  .modal-close:hover { background: rgba(255,255,255,0.22); }
+  .modal-body { padding: 32px 36px 40px; }
+  .case-block { margin-bottom: 22px; }
+  .case-block h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .case-block p { font-size: 13.5px; color: var(--ink-2); line-height: 1.85; }
+  .case-block p strong { font-weight: 700; color: var(--ink-1); }
+  .sub-item { display: flex; gap: 14px; margin: 16px 0; }
+  .sub-badge { flex-shrink: 0; width: 22px; height: 22px; border-radius: 5px; background: var(--ink-1); color: #fff; font-size: 11.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .sub-item-body h5 { font-size: 13.5px; font-weight: 700; color: var(--ink-1); margin-bottom: 6px; }
+  .sub-item-body p { font-size: 13px; color: var(--ink-2); line-height: 1.8; }
+  .sub-item-body p strong { font-weight: 700; color: var(--ink-1); }
+  .result-box { background: var(--bg-soft); border-left: 3px solid var(--ink-1); padding: 18px 22px; margin: 18px 0; border-radius: 0 8px 8px 0; }
+  .result-box .big { font-size: 17px; font-weight: 800; color: var(--ink-1); margin-bottom: 4px; }
+  .result-box .desc { font-size: 12px; color: var(--ink-3); }
+  .apex-box { background: rgba(40,45,50,0.04); border: 1.5px solid var(--charcoal); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .apex-box .apex-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px; }
+  .apex-box p { font-size: 13px; color: var(--ink-2); line-height: 1.8; }
+  .shot-label { font-size: 12px; color: var(--ink-3); font-weight: 600; margin-bottom: 10px; }
+  .case-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 18px; }
+  .case-imgs.single { grid-template-columns: 1fr; }
+  .case-imgs.triple .fig:first-child { grid-column: 1 / -1; }
+  .fig { background: var(--bg-soft); border-radius: 10px; padding: 9px; position: relative; cursor: zoom-in; }
+  .fig img { width: 100%; max-height: 230px; object-fit: contain; border-radius: 6px; }
+  .fig figcaption { font-size: 11px; color: var(--ink-3); margin-top: 8px; line-height: 1.55; text-align: center; }
+  .fig-zoom-badge { position: absolute; top: 17px; right: 17px; display: flex; align-items: center; gap: 5px; background: var(--charcoal); color: #fff; font-size: 10.5px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2; letter-spacing: -0.01em; }
+  .fig-zoom-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.85; }
+  .lightbox-overlay { position: fixed; inset: 0; background: rgba(15,15,17,0.9); z-index: 200; display: none; align-items: center; justify-content: center; padding: 48px 24px; cursor: zoom-out; }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-overlay img { max-width: 100%; max-height: 88vh; border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); cursor: default; }
+  .lightbox-close { position: fixed; top: 24px; right: 28px; width: 40px; height: 40px; border-radius: 100px; background: rgba(255,255,255,0.12); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 17px; cursor: pointer; z-index: 201; transition: background .15s; }
+  .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+
+  /* EXTRA NOTE */
+  .extra-note { margin-top: 22px; padding: 16px 20px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--ink-2); line-height: 1.7; }
+  .extra-note strong { color: var(--ink-1); font-weight: 700; }
+
+  /* SKILLS */
+  .skills-section { background: var(--bg-soft); padding: 90px 0; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .skills-cell { padding: 24px; border: 1px solid var(--border); border-radius: var(--r); background: var(--bg); }
+  .skills-cell h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); color: var(--ink-1); }
+  .skills-cell li { font-size: 13px; color: var(--ink-2); line-height: 1.8; padding: 2px 0; }
+
+  /* FOOTER */
+  footer { padding: 56px 0; border-top: 1px solid var(--border); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  footer .name { font-size: 19px; font-weight: 800; margin-bottom: 6px; color: var(--ink-1); }
+  footer .role { font-size: 13px; color: var(--ink-3); margin-bottom: 10px; }
+  footer .info { font-size: 13.5px; color: var(--ink-2); }
+  footer .mail-btn { padding: 13px 26px; border-radius: 100px; background: var(--ink-1); color: #fff; font-weight: 700; font-size: 13.5px; transition: opacity .15s; }
+  footer .mail-btn:hover { opacity: 0.85; }
+
+  @media (max-width: 760px) {
+    .hero h1 { font-size: 36px; }
+    .results-grid, .skills-grid { grid-template-columns: 1fr 1fr; }
+    .case-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 11.5px; }
+    section, .hero, .results-section, .skills-section { padding: 64px 0; }
+    .modal-head, .modal-body { padding-left: 22px; padding-right: 22px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">오희은 · 고위드 Portfolio</div>
+    <div class="nav-links">
+      <a href="#intro">소개</a>
+      <a href="#match">JD 매칭</a>
+      <a href="#cases">케이스 스터디</a>
+      <a href="#contact">연락하기</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="intro">
+  <div class="wrap">
+    <div class="hero-tag">고위드 CX/Business Operations Manager 지원 · 운영 프로세스 구조화 · VOC 분석 · 반복 업무 자동화 · 파트너 협업 · AI 기반 업무 효율화</div>
+    <h1>오희은</h1>
+    <p class="hero-role">CX/Business Operations Portfolio</p>
+    <p class="hero-lead">
+      고위드의 지출최적화 서비스는 고객사, 파트너사, 내부 구성원이 함께 맞물리며 서비스가 늘어날수록 운영이 복잡해지는 구조입니다.<br><br>
+      저는 <strong>정해진 기준이 부족한 환경</strong>에서 반복되는 고객 문의와 운영 이슈를 데이터로 정리하고, 기준을 세우고, 자동화해 확장 가능한 운영 체계로 만들어온 경험이 있습니다.<br><br>
+      이 포트폴리오는 "얼마나 많은 문의를 처리했는가"보다 <strong>"운영을 어떻게 구조화했고 반복 업무를 어떻게 자동화했는가"</strong>를 보여주는 4개 케이스 요약입니다.
+    </p>
+    <div class="hero-cta">
+      <a href="#cases" class="btn btn-dark">케이스 스터디 보기 →</a>
+      <a href="#match" class="btn btn-line">JD 매칭 확인</a>
+    </div>
+  </div>
+</div>
+
+<!-- JD MATCHING -->
+<section id="match" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="eyebrow">JD Matching</div>
+    <h2 class="sec-title">고위드 JD 요구사항과 제 경험의 연결</h2>
+    <div class="table-wrap">
+      <table class="match-table">
+        <thead>
+          <tr>
+            <th>고위드 JD</th>
+            <th>연결 경험</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>고객 문의·운영 이슈 직접 해결</td>
+            <td>채널톡·CRM·게시판 문의 유형화 및 담당 부서 이관 기준 정리</td>
+          </tr>
+          <tr>
+            <td>반복 업무 구조화·자동화</td>
+            <td>Chrome Extension, Apps Script, Slack API, Zapier 기반 반복 입력·조회 자동화</td>
+          </tr>
+          <tr>
+            <td>VOC 기반 서비스 개선</td>
+            <td>배송 제약 오인 VOC 분석 후 장바구니 안내 구조 개선</td>
+          </tr>
+          <tr>
+            <td>파트너사·내부 구성원 협업</td>
+            <td>물류사·택배사·MD·재무·개발팀과 사고·증빙·비용 기준 조율</td>
+          </tr>
+          <tr>
+            <td>확장 가능한 운영 체계 구축</td>
+            <td>SOP, FAQ, 에스컬레이션, 온보딩 기준 정리</td>
+          </tr>
+          <tr>
+            <td>AI 도구 활용</td>
+            <td>ChatGPT·Claude·NotebookLM으로 문서 초안, 리스크 문구, 자동화 로직 설계</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- KEY RESULTS -->
+<div class="results-section" id="results">
+  <div class="wrap">
+    <div class="eyebrow">Key Results</div>
+    <h2 class="sec-title">수치로 보는 핵심 성과</h2>
+    <div class="results-grid">
+      <div class="result-cell">
+        <div class="result-n">7→1단계</div>
+        <div class="result-l">반복 처리 동선 축소</div>
+        <div class="result-d">Chrome Extension·Apps Script 기반 자동화</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-n">1,151건+</div>
+        <div class="result-l">대량 운영 이슈 처리</div>
+        <div class="result-d">고객 안내·환불·재배송·후속 확인 단계 관리</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-n">Slack API</div>
+        <div class="result-l">담당자 조회 자동화</div>
+        <div class="result-d">상품코드·담당 MD 확인을 전사 공용 조회 구조로 확장</div>
+      </div>
+      <div class="result-cell">
+        <div class="result-n">0건 수준</div>
+        <div class="result-l">반복 VOC 감소</div>
+        <div class="result-d">안내 구조 개선 후 일 6~10건 문의 해소</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDY -->
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Case Study</div>
+    <h2 class="sec-title">운영을 구조화하고 반복 업무를 자동화한 4개 케이스</h2>
+    <div class="case-grid">
+
+      <div class="case-card" onclick="openModal('m1')">
+        <div class="case-no">CASE 01</div>
+        <div class="case-tags"><span class="case-tag">자동화</span><span class="case-tag">BizOps</span><span class="case-tag">처리 상태 가시화</span></div>
+        <h3>반복 운영 업무 자동화 및 처리 상태 가시화</h3>
+        <p class="blurb">반복 입력·조회·공유가 수작업이라 처리량이 늘어날수록 누락과 지연 위험이 커지는 구조를, Chrome Extension과 Apps Script로 자동화하고 처리 현황을 가시화했습니다.</p>
+        <div class="case-card-foot"><span class="summary">7→1단계 · 1,151건+ 대응</span><span class="case-more">자세히 보기 →</span></div>
+      </div>
+
+      <div class="case-card" onclick="openModal('m2')">
+        <div class="case-no">CASE 02</div>
+        <div class="case-tags"><span class="case-tag">CX</span><span class="case-tag">VOC 구조화</span><span class="case-tag">담당 부서 연결</span></div>
+        <h3>고객 문의/VOC 구조화 및 담당 부서 이관 기준 설계</h3>
+        <p class="blurb">자유 텍스트 문의 안에 고객 의도가 묻혀 재확인이 반복되던 구조를, 의도 기준 선택값으로 바꾸고 담당 부서 이관 기준을 정리했습니다.</p>
+        <div class="case-card-foot"><span class="summary">재확인 왕복 감소 · 담당 부서 연결 기준 명확화</span><span class="case-more">자세히 보기 →</span></div>
+      </div>
+
+      <div class="case-card" onclick="openModal('m3')">
+        <div class="case-no">CASE 03</div>
+        <div class="case-tags"><span class="case-tag">파트너 운영</span><span class="case-tag">정산 기준</span><span class="case-tag">비용 리스크 관리</span></div>
+        <h3>외부 파트너 사고·정산 기준 재정렬</h3>
+        <p class="blurb">택배사·물류사·본사 간 증빙·비용 기준이 달라 배상·정산이 지연되던 문제를, 원문 근거로 증빙·정산 기준을 재정렬했습니다.</p>
+        <div class="case-card-foot"><span class="summary">택배 사고 배상 회수액 월 50만 원대 → 700만 원대</span><span class="case-more">자세히 보기 →</span></div>
+      </div>
+
+      <div class="case-card" onclick="openModal('m4')">
+        <div class="case-no">CASE 04</div>
+        <div class="case-tags"><span class="case-tag">VOC 분석</span><span class="case-tag">프로세스 개선</span><span class="case-tag">서비스 이용 흐름 개선</span></div>
+        <h3>반복 VOC 기반 안내 구조 개선</h3>
+        <p class="blurb">배송 가능 조건 때문에 주문이 막혔지만 고객에게는 품절·오류처럼 보이던 문제를, 차단 사유를 먼저 보여주는 안내 구조로 바꿨습니다.</p>
+        <div class="case-card-foot"><span class="summary">일 6~10건 → 0건 수준</span><span class="case-more">자세히 보기 →</span></div>
+      </div>
+
+    </div>
+
+    <div class="extra-note"><strong>기타 경험</strong> — 카카오VX에서 400여 개 제휴 골프장의 예약·취소·위약 기준을 공통 항목으로 재정리해 상담 판단 기준을 표준화했습니다.</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-section">
+  <div class="wrap">
+    <div class="eyebrow">Skills &amp; Tools</div>
+    <h2 class="sec-title">역량 및 도구</h2>
+    <div class="skills-grid">
+      <div class="skills-cell">
+        <h3>운영 구조화</h3>
+        <ul>
+          <li>문의·이슈 유형화 및 담당 부서 이관 기준 설계</li>
+          <li>SOP · FAQ · 에스컬레이션 기준 문서화</li>
+          <li>VOC 분석 기반 안내 구조 개선</li>
+          <li>계약서·약관 기준 비용·증빙 기준 정리</li>
+        </ul>
+      </div>
+      <div class="skills-cell">
+        <h3>AI · 자동화</h3>
+        <ul>
+          <li>Claude · ChatGPT · NotebookLM</li>
+          <li>Chrome Extension · Apps Script</li>
+          <li>Slack API · Slack Workflow · Zapier</li>
+          <li>생성형 AI 기반 문서 초안·검토</li>
+        </ul>
+      </div>
+      <div class="skills-cell">
+        <h3>데이터 · 협업 도구</h3>
+        <ul>
+          <li>Google Sheets · Excel</li>
+          <li>Notion · Slack · CRM · 채널톡</li>
+          <li>유관부서·파트너사 협의 · 처리 기준 조율</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="name">오희은</div>
+      <div class="role">고위드 · CX/Business Operations Manager 지원</div>
+      <div class="info">gldms1009@naver.com · 010-2357-2674</div>
+    </div>
+    <a href="mailto:gldms1009@naver.com" class="mail-btn">이메일 보내기</a>
+  </div>
+</footer>
+
+<!-- MODAL 1: 자동화 -->
+<div class="modal-overlay" id="m1" onclick="closeOnOverlay(event,'m1')">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 01</div>
+        <h2>반복 운영 업무 자동화 및 처리 상태 가시화</h2>
+      </div>
+      <div class="modal-close" onclick="closeModal('m1')">✕</div>
+    </div>
+    <div class="modal-body">
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>반복 입력·조회·공유 업무가 수작업 중심으로 운영되어 처리량이 늘어날수록 <strong>누락과 지연이 발생할 가능성</strong>이 커졌습니다. 진행 현황도 담당자 외에는 보이지 않아 대량 이슈 발생 시 처리 상태를 빠르게 파악하기 어려웠습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>What I Did</h4>
+        <div class="sub-item">
+          <div class="sub-badge">A</div>
+          <div class="sub-item-body">
+            <h5>Chrome Extension 기반 반복 입력 자동화</h5>
+            <p>생성형 AI의 도움을 받아 Chrome Extension을 구현해 <strong>AS·재배송·반품 등록 처리 동선을 7단계에서 1단계 수준으로</strong> 줄였습니다. 귀책 판단·예외 케이스처럼 비용에 영향을 주는 구간은 담당자가 직접 확인하도록 남겼습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">B</div>
+          <div class="sub-item-body">
+            <h5>Slack API 기반 담당자 조회 자동화</h5>
+            <p>Slack API와 Apps Script로 <strong>/담당자 슬래시 커맨드</strong>를 구축해 상품코드·담당 MD를 즉시 조회할 수 있도록 했습니다. 매번 스프레드시트를 열어 찾던 과정을 없앴습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">C</div>
+          <div class="sub-item-body">
+            <h5>Zapier + Google Sheets 기반 처리 현황 가시화</h5>
+            <p>반복 커뮤니케이션 기록을 정리하고, <strong>처리 현황을 팀 내에서 실시간으로 확인</strong>할 수 있는 구조를 만들었습니다. 대량 이슈 발생 시 누가 어떤 건을 담당하는지 한눈에 파악할 수 있었습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="big">반복 처리 동선 7→1단계 · 대량 이슈 1,151건+ 대응</div>
+        <div class="desc">누락·지연 방지 · 처리 상태 가시화 · 상시 운영 루틴으로 정착</div>
+      </div>
+      <div class="shot-label">실제 화면</div>
+      <div class="case-imgs triple">
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case1-admin.png" alt="Chrome Extension 반품 자동입력 화면"><figcaption>Chrome Extension — 반품·AS 등록 주요 항목 자동 입력 (처리 동선 7→1단계)</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case5-deploy.png" alt="담당자 조회 자동화 배포 예시"><figcaption>담당자 조회 자동화 배포 예시</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case5-bot-result.png" alt="담당자봇 조회 결과 화면"><figcaption>/담당자 조회 결과 — 담당 MD·상품코드 즉시 확인</figcaption></figure>
+      </div>
+      <div class="apex-box">
+        <div class="apex-label">GOWID 연결</div>
+        <p>고위드의 지출최적화 서비스에서도 SaaS·IT기기·파트너 요청이 늘어나면 반복 조회·등록·공유 업무가 함께 증가합니다. 이 케이스처럼 <strong>자동화와 처리 상태 가시화 구조</strong>를 적용하면 운영 인력을 늘리지 않고도 확장 가능한 운영 체계를 만들 수 있습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>Insight</h4>
+        <p>자동화의 목적은 속도가 아니라 기준값 일관성과 오류 감소입니다. 귀책 판단이나 예외 케이스처럼 사람이 봐야 할 구간은 그대로 남겨두고, 반복 입력과 조회처럼 시스템이 도와야 할 구간만 자동화했습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2: 고객 문의/VOC 구조화 -->
+<div class="modal-overlay" id="m2" onclick="closeOnOverlay(event,'m2')">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 02</div>
+        <h2>고객 문의/VOC 구조화 및 담당 부서 이관 기준 설계</h2>
+      </div>
+      <div class="modal-close" onclick="closeModal('m2')">✕</div>
+    </div>
+    <div class="modal-body">
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>환불·교환처럼 <strong>고객이 원하는 조치가 자유 텍스트 문의 안에 섞여 있어</strong>, 고객 의도를 다시 확인해야 하는 구조였습니다. 의사 확인 없이 임의로 처리할 경우 분쟁 리스크가 있었고, 재확인 왕복이 반복됐습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>What I Did</h4>
+        <div class="sub-item">
+          <div class="sub-badge">A</div>
+          <div class="sub-item-body">
+            <h5>고객 의도 유형 분류 및 선택 구조 설계</h5>
+            <p>고객 문의를 <strong>"환불 희망", "교환 희망", "재배송 희망", "확인 요청"</strong> 등 의도 기준으로 나누고, 1:1 문의 입력 단계에서 선택값으로 구분할 수 있도록 구조 개선안을 설계했습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">B</div>
+          <div class="sub-item-body">
+            <h5>기존 CRM 필드 활용 · 개발 범위 최소화</h5>
+            <p>답변 작성일과 중복되는 영역을 '해결방법' 필드로 대체하는 방향을 제안해, <strong>별도 개발 범위를 늘리지 않고</strong> 구조를 바꿀 수 있는 지점을 찾았습니다. 해당 값이 CRM의 해결방법 필드로 노출되도록 연결했습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">C</div>
+          <div class="sub-item-body">
+            <h5>문의 유형별 담당 부서 이관 기준 정리</h5>
+            <p>채널톡·CRM·게시판으로 들어오는 문의를 유형별로 확인하고, <strong>MD·물류·재무·개발 등 담당 부서로 정확히 연결</strong>되도록 이관 기준을 정리해 지원 인력 누구나 같은 기준으로 이관할 수 있도록 했습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="big">재확인 왕복 감소 · 담당 부서 연결 기준 명확화</div>
+        <div class="desc">자유 텍스트 → 의도 기반 선택값 · 임의 처리 리스크 감소</div>
+      </div>
+      <div class="shot-label">실제 화면</div>
+      <div class="case-imgs triple">
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-slack.png" alt="해결방법 선택 필드 신설 제안 예시"><figcaption>해결방법 선택 필드 신설 제안 예시</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-solution-field.png" alt="1:1 문의 화면 해결방법 선택 필드"><figcaption>1:1 문의 화면 '원하는 해결방법' 선택 필드</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case2-crm-compare.png?v=2" alt="CRM 화면 Before/After"><figcaption>CRM 화면 Before → After — 선택값이 CRM에서 확인되도록 연결</figcaption></figure>
+      </div>
+      <div class="apex-box">
+        <div class="apex-label">GOWID 연결</div>
+        <p>고위드 고객사 문의도 SaaS, 카드, IT기기, 비용 절감, 파트너 연결 등으로 나뉠 수 있어 <strong>초기 분류 기준이 중요</strong>합니다. 문의가 들어오는 시점에 의도와 처리 유형을 구분하면 이슈 접수 → 분류 → 대응 사이클을 빠르게 가져갈 수 있습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>Insight</h4>
+        <p>응대 단계에서 발생하는 재확인 비용은 대부분 입력 단계의 구조 문제에서 시작됩니다. 큰 개발 변경 없이 기존 필드를 다르게 활용하는 방식만으로도 운영 비용을 빠르게 줄일 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 3: 외부 파트너 정산 -->
+<div class="modal-overlay" id="m3" onclick="closeOnOverlay(event,'m3')">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 03</div>
+        <h2>외부 파트너 사고·정산 기준 재정렬</h2>
+      </div>
+      <div class="modal-close" onclick="closeModal('m3')">✕</div>
+    </div>
+    <div class="modal-body">
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>택배·물류 사고 발생 시 택배사, 물류사, 본사 간 <strong>증빙 요건과 비용 반영 기준이 달라</strong> 배상 처리가 지연되거나 회수로 이어지지 못하는 경우가 많았습니다. 물류 파트너 전환 이후에는 파트너 귀책 가능성이 있는 사고가 반복됐지만, 이를 정산 비용에 반영할 기준이 정해져 있지 않았습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>What I Did</h4>
+        <div class="sub-item">
+          <div class="sub-badge">A</div>
+          <div class="sub-item-body">
+            <h5>원문 근거 기반 사고·증빙 기준 재정리</h5>
+            <p>택배 표준약관과 실제 사고 접수 흐름을 기준으로, <strong>사고 접수 기록과 현장에서 확보 가능한 외부 파손·오염 증빙을 기준으로 처리</strong>할 수 있도록 논점을 정리했습니다. 이를 통해 증빙 병목 없이 배상 처리로 이어질 수 있는 흐름을 만들었습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">B</div>
+          <div class="sub-item-body">
+            <h5>물류 계약서 기준으로 파트너 귀책 비용 차감 기준 정리</h5>
+            <p>물류 계약서 원문을 기준으로, 회사가 먼저 처리한 환불액·재배송비·CS 보상 비용을 익월 물류비 정산에서 차감 반영할 수 있는 기준을 정리했습니다. 외부 3PL 물류 파트너의 온라인 피해현황을 월별로 집계하고, 계약서 조항 기준으로 피해 유형·차감 예정액·조정 가능 항목을 정리해 정산 협의 자료로 관리했습니다. <strong>확정액을 단순 수용하지 않고 확인 필요 사항을 함께 표시</strong>해 재검토 가능한 구조로 만들었습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="big">택배 사고 배상 회수액 월 50만 원대 → 700만 원대</div>
+        <div class="desc">원문 근거 기반 증빙 기준 재정리 · 파트너 귀책 비용 정산 반영</div>
+      </div>
+      <div class="apex-box">
+        <div class="apex-label">GOWID 연결</div>
+        <p>고위드도 SaaS·IT기기·제휴 파트너와 조건, 비용, 고객사 요청이 얽히는 구조입니다. <strong>확인된 사실, 근거 규정, 증빙 기준, 책임 주체를 분리해야</strong> 같은 유형의 이슈를 반복 가능한 기준으로 처리할 수 있습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>Insight</h4>
+        <p>운영 리스크가 생겼을 때 감정적 협의나 관행에 기대면 같은 문제가 반복됩니다. 원문 기준, 증빙 기준, 책임 주체, 정산 기준을 나눠 반복 가능한 판단 구조를 만들면 — 파트너가 바뀌어도, 사고 유형이 달라져도 — 같은 흐름으로 처리할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 4: 반복 VOC 안내 구조 개선 -->
+<div class="modal-overlay" id="m4" onclick="closeOnOverlay(event,'m4')">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 04</div>
+        <h2>반복 VOC 기반 안내 구조 개선</h2>
+      </div>
+      <div class="modal-close" onclick="closeModal('m4')">✕</div>
+    </div>
+    <div class="modal-body">
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>배송 가능 요일이 다른 상품이 함께 담기면 주문이 차단됐지만, 고객에게는 기존 품절형 메시지만 노출되어 실제 원인을 알기 어려웠습니다. 동일한 문의가 일 6~10건 반복됐습니다. <strong>핵심 문제는 주문이 막히는 시점에 실제 차단 사유를 보여주지 못하는 화면 구조</strong>였습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>What I Did</h4>
+        <div class="sub-item">
+          <div class="sub-badge">A</div>
+          <div class="sub-item-body">
+            <h5>반복 VOC 원인 재정의</h5>
+            <p>문제를 단순 품절 문의가 아니라, <strong>차단 사유가 화면에 드러나지 않는 안내 구조 문제</strong>로 재정의했습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">B</div>
+          <div class="sub-item-body">
+            <h5>개발 제약을 고려한 최소 개선안 제안</h5>
+            <p>차단 로직 전체를 바꾸는 것은 영향 범위가 컸기 때문에, <strong>장바구니 단계에서 상품별 배송 가능 요일을 subtext로 안내</strong>하는 방식을 제안했습니다. 유사한 배송 제약 상품에도 재사용할 수 있도록 라벨 구조로 정리했습니다.</p>
+          </div>
+        </div>
+        <div class="sub-item">
+          <div class="sub-badge">C</div>
+          <div class="sub-item-body">
+            <h5>개발팀 협의 및 유사 케이스 확장</h5>
+            <p>반복 문의 데이터와 실제 고객 혼선 지점을 함께 공유해 개발팀에 개선안을 전달했고, 제안은 당일 반영되었습니다. 이후 유사한 배송 제약 상품에도 같은 안내 구조를 확장 적용했습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="big">일 6~10건 → 0건 수준</div>
+        <div class="desc">반복 문의 해소 · 개발팀 제안·당일 구현 · 유사 케이스로 확장 적용</div>
+      </div>
+      <div class="shot-label">실제 화면</div>
+      <div class="case-imgs">
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case3-slack.png" alt="배송 제약 상품 subtext 개선 제안 Slack 논의"><figcaption>배송 제약 상품 subtext 개선 제안 과정</figcaption></figure>
+        <figure class="fig" onclick="openLightbox(this,event)"><span class="fig-zoom-badge">클릭하면 크게 보여요</span><img src="https://collette1009.github.io/portfolio-main/kakao/case3-cart.png?v=2" alt="장바구니 상품별 배송 제약 안내 subtext 구현 화면"><figcaption>상품별 subtext를 노출해 차단 사유를 장바구니 단계에서 확인 가능하도록 개선</figcaption></figure>
+      </div>
+      <div class="apex-box">
+        <div class="apex-label">GOWID 연결</div>
+        <p>고객이 서비스를 못 쓰는 이유를 문의하기 전에 화면과 안내 구조에서 먼저 설명하면, <strong>운영 인입을 줄이고 서비스 이용 흐름을 개선</strong>할 수 있습니다.</p>
+      </div>
+      <div class="case-block">
+        <h4>Insight</h4>
+        <p>같은 정보를 충분히 안내하지 않으면 고객은 시스템 오류로 받아들입니다. 차단 로직 전체를 바꾸기 어려운 상황에서도, 막히는 시점에 이유를 먼저 보여주면 혼선을 줄일 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeOnLightboxOverlay(event)">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeOnOverlay(e, id) {
+    if (e.target.id === id) closeModal(id);
+  }
+  function openLightbox(figEl, e) {
+    if (e) e.stopPropagation();
+    var img = figEl.querySelector('img');
+    var lbImg = document.getElementById('lightboxImg');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeOnLightboxOverlay(e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(function(m){
+        m.classList.remove('open');
+      });
+      closeLightbox();
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
