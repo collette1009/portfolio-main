@@ -2,175 +2,58 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>오희은 | 토스씨엑스 Operations Manager (카드/제품운영) Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오희은 | Toss CX Operations Manager 포트폴리오</title>
 <style>
-:root{--ink:#17191c;--ink2:#474c52;--muted:#7b8086;--line:#dedfe2;--soft:#f6f7f8;--char:#272b30;--white:#fff;}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65;word-break:keep-all}
-a{color:inherit;text-decoration:none} .wrap{max-width:980px;margin:0 auto;padding:0 28px}
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.nav .wrap{height:58px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:12px;font-weight:850;letter-spacing:.04em} .navlinks{display:flex;gap:22px;font-size:11px;font-weight:700;color:var(--muted)}
-.hero{padding:92px 0 78px;background-image:radial-gradient(rgba(23,25,28,.09) 1px,transparent 1px);background-size:20px 20px}
-.eyebrow{font-size:10px;font-weight:850;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
-.hero h1{font-size:48px;margin:0 0 9px;letter-spacing:-.04em} .hero .role{font-size:15px;font-weight:700;color:var(--ink2)}
-.lead{max-width:760px;margin-top:28px;border-left:3px solid var(--ink);padding-left:20px;color:var(--ink2);font-size:15px;line-height:1.9}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px} .chip{font-size:10px;font-weight:750;border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:999px}
-.avail{display:inline-block;margin-top:16px;font-size:10px;color:var(--muted)}
-.section{padding:78px 0} .soft{background:var(--soft)} .dark{background:var(--char);color:#fff}
-.section-title{font-size:25px;line-height:1.35;margin:0 0 25px;letter-spacing:-.02em}
-.fit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.fit{border:1px solid var(--line);padding:17px 15px;background:#fff;min-height:148px}
-.fit .k{font-size:9px;color:var(--muted);font-weight:850;letter-spacing:.06em} .fit h3{font-size:13px;margin:8px 0 7px;line-height:1.45}
-.fit p{font-size:11px;color:var(--ink2);margin:0;line-height:1.58} .fit .case-ref{font-size:9px;color:var(--muted);margin-top:10px}
-.case-section{padding:68px 0;border-top:1px solid var(--line)} .case-section:first-child{border-top:0}
-.case-head{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start;margin-bottom:22px}
-.case-no{font-size:10px;font-weight:850;color:var(--muted);letter-spacing:.1em} .case-head h2{font-size:25px;line-height:1.4;margin:0;letter-spacing:-.02em}
-.case-summary{font-size:13px;color:var(--ink2);margin:8px 0 0;max-width:760px}
-.parl{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0 22px}
-.parl .box{border:1px solid var(--line);padding:14px;background:#fff;min-height:132px}
-.parl b{display:block;font-size:9px;letter-spacing:.09em;color:var(--muted);margin-bottom:7px}
-.parl p{font-size:11.2px;color:var(--ink2);margin:0;line-height:1.62}
-.result-highlight{border-left:3px solid var(--ink);background:var(--soft);padding:14px 17px;font-size:12px;color:var(--ink2);margin-bottom:20px}
-.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start} .evidence-grid.one{grid-template-columns:1fr}
-.evidence{border:1px solid var(--line);background:#fff;padding:12px;overflow:hidden}
-.evidence img{display:block;max-width:100%;width:auto;height:auto;max-height:520px;margin:0 auto}
-.cap{font-size:9.5px;color:var(--muted);margin-top:9px;text-align:center;line-height:1.45}
-.source-note{font-size:9px;color:var(--muted);margin-top:8px}
-.schema{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:16px} .schema div{background:var(--soft);border:1px solid var(--line);padding:13px 8px;text-align:center;font-size:10.5px;font-weight:700}
-.connector{text-align:center;font-size:16px;color:#aaa;align-self:center}
-.other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.other{border:1px solid var(--line);padding:17px} .other b{font-size:12px} .other p{font-size:10.8px;color:var(--ink2);margin:7px 0 0}
-.close{padding:70px 0;background:var(--char);color:#fff} .close .lead2{font-size:18px;line-height:1.8;max-width:760px;margin:0}
-.close .sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:16px;line-height:1.7}
-footer{border-top:1px solid #3a3f45;background:var(--char);color:#fff;padding:28px 0} footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
-.footname{font-weight:850} .foot{font-size:10px;color:rgba(255,255,255,.55)}
-@media(max-width:820px){.fit-grid{grid-template-columns:1fr 1fr}.parl{grid-template-columns:1fr 1fr}.case-head{grid-template-columns:1fr;gap:6px}.schema{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.wrap{padding:0 18px}.navlinks{display:none}.hero h1{font-size:38px}.fit-grid,.parl,.evidence-grid,.other-grid{grid-template-columns:1fr}.schema{grid-template-columns:1fr}}
-@media print{.nav{display:none}.hero{padding:35px 0}.section,.case-section{padding:28px 0}.case-section{break-inside:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css');
+:root{--ink:#17191c;--sub:#50555b;--muted:#8a8f95;--line:#e2e4e7;--soft:#f7f8f9;--dark:#222529;--white:#fff;--max:1040px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.66;word-break:keep-all;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.topbar .wrap{height:62px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:13px;font-weight:800;letter-spacing:.05em}.nav{display:flex;gap:24px;font-size:12px;color:var(--muted);font-weight:650}
+.hero{padding:92px 0 78px;border-bottom:1px solid var(--line)}.role{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:16px}.hero h1{font-size:54px;letter-spacing:-.045em;line-height:1.05;margin:0 0 18px;font-weight:800}.hero .headline{max-width:820px;font-size:25px;line-height:1.48;letter-spacing:-.025em;margin:0;color:var(--ink);font-weight:700}.hero .intro{max-width:790px;font-size:14px;color:var(--sub);margin:22px 0 0;line-height:1.85}.meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;font-size:11px;color:var(--muted)}.meta span+span{padding-left:14px;border-left:1px solid var(--line)}
+.section{padding:78px 0}.section.soft{background:var(--soft)}.kicker{font-size:11px;color:var(--muted);font-weight:750;margin-bottom:9px}.section h2{font-size:28px;line-height:1.35;letter-spacing:-.03em;margin:0 0 30px}
+.fit-list{border-top:1px solid var(--ink)}.fit-row{display:grid;grid-template-columns:180px 1fr 160px;gap:24px;align-items:center;padding:18px 2px;border-bottom:1px solid var(--line)}.fit-row .label{font-size:12px;font-weight:750}.fit-row .desc{font-size:13px;color:var(--sub)}.fit-row .proof{font-size:11px;color:var(--muted);text-align:right}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.case-card{appearance:none;text-align:left;border:1px solid var(--line);background:#fff;padding:24px;min-height:238px;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;display:flex;flex-direction:column}.case-card:hover{transform:translateY(-2px);border-color:#c9ccd0;box-shadow:0 12px 30px rgba(15,20,25,.06)}.case-card.wide{grid-column:1/-1;min-height:210px}.case-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.case-no{font-size:10px;color:var(--muted);font-weight:750;letter-spacing:.06em}.case-metric{font-size:11px;font-weight:750;color:var(--ink)}.case-card h3{font-size:20px;line-height:1.45;letter-spacing:-.025em;margin:18px 0 10px}.case-card p{font-size:12.5px;color:var(--sub);margin:0;max-width:720px}.case-open{margin-top:auto;padding-top:22px;font-size:11px;font-weight:750;color:var(--muted)}
+.tools{border-top:1px solid var(--ink)}.tool-row{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:16px 2px;border-bottom:1px solid var(--line)}.tool-row b{font-size:12px}.tool-row span{font-size:12px;color:var(--sub)}
+.closing{padding:68px 0;background:var(--dark);color:#fff}.closing p{max-width:780px;margin:0;font-size:20px;line-height:1.75;letter-spacing:-.018em}.closing .small{margin-top:16px;font-size:12px;color:rgba(255,255,255,.58);line-height:1.75}
+footer{padding:34px 0;border-top:1px solid var(--line)}footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot-name{font-size:16px;font-weight:800}.foot-meta{font-size:11px;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:100;display:none;background:rgba(20,22,25,.68);padding:28px 18px;overflow:auto}.modal.open{display:block}.modal-panel{max-width:900px;margin:0 auto;background:#fff;min-height:200px;box-shadow:0 24px 80px rgba(0,0,0,.22);border-radius:16px;overflow:hidden}.modal-head{position:sticky;top:-28px;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:26px 34px 22px;display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.modal-no{font-size:10px;color:var(--muted);font-weight:750;margin-bottom:8px}.modal-head h3{font-size:24px;line-height:1.42;letter-spacing:-.025em;margin:0;max-width:740px}.modal-close{width:36px;height:36px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer;font-size:19px;line-height:1;color:var(--sub);flex:0 0 auto;transition:background .15s ease,border-color .15s ease}.modal-close:hover{background:var(--soft);border-color:#c9ccd0}.modal-body{padding:30px 34px 40px}.detail{display:grid;grid-template-columns:115px 1fr;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}.detail:first-child{padding-top:0}.detail .key{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.05em;text-transform:uppercase}.detail p{font-size:13px;color:var(--sub);margin:0;line-height:1.82}.result-line{margin:24px 0 0;padding:15px 17px;background:var(--soft);font-size:12.5px;color:var(--sub);border-left:3px solid var(--ink)}.evidence{margin-top:24px;border-top:1px solid var(--line);padding-top:24px}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.evidence-grid.one{grid-template-columns:1fr}.evidence figure{margin:0;border:1px solid var(--line);padding:14px;background:#fff;border-radius:10px}.evidence img{display:block;max-width:100%;max-height:520px;width:auto;height:auto;margin:0 auto;cursor:zoom-in;border-radius:7px}.evidence figcaption{font-size:10px;color:var(--muted);line-height:1.5;text-align:center;margin-top:9px}.schema{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:22px}.schema div{padding:11px 8px;background:var(--soft);border:1px solid var(--line);font-size:10.5px;text-align:center;color:var(--sub);font-weight:650}
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(8,10,12,.92);padding:30px;align-items:center;justify-content:center;cursor:zoom-out}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:100%;background:#fff}
+@media(max-width:760px){.wrap{padding:0 20px}.nav{display:none}.hero{padding:70px 0 58px}.hero h1{font-size:42px}.hero .headline{font-size:21px}.fit-row{grid-template-columns:1fr;gap:7px}.fit-row .proof{text-align:left}.case-grid{grid-template-columns:1fr}.case-card.wide{grid-column:auto}.tool-row{grid-template-columns:1fr;gap:7px}.modal-head{padding:22px 22px 18px}.modal-body{padding:24px 22px 32px}.detail{grid-template-columns:1fr;gap:7px}.evidence-grid{grid-template-columns:1fr}.schema{grid-template-columns:1fr 1fr}footer .wrap{display:block}.foot-meta{margin-top:6px}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap"><div class="logo">OH HEE EUN · PRODUCT OPERATIONS</div><div class="navlinks"><a href="#fit">Role Fit</a><a href="#case1">Cases</a><a href="#other">Other Ops</a><a href="#close">Fit</a></div></div></nav>
+<header class="topbar"><div class="wrap"><div class="brand">OH HEE EUN</div><nav class="nav"><a href="#fit">경험</a><a href="#work">사례</a><a href="#tools">도구</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="role">Toss CX · Operations Manager (카드/제품운영)</div><h1>오희은</h1><p class="headline">제각각인 조건을 같은 기준으로 정리하고,<br>반복되는 문의와 손일은 운영 구조 자체를 바꿔 줄였습니다.</p><p class="intro">프로모션 VOC 173건을 원인별로 다시 분류하고, 400여 개 제휴 골프장의 정책을 공통 속성으로 정리했습니다. 고객이 헷갈리는 지점은 화면과 CRM 입력 구조로 옮겼고, 반복되는 관리자 입력은 작은 자동화 도구로 줄였습니다.</p><div class="meta"><span>조건·문구 정확성</span><span>제휴사 운영</span><span>제품·어드민 개선</span><span>반복 운영 자동화</span><span>2026년 9월 초 입사 협의 가능</span></div></div></section>
+<section class="section" id="fit"><div class="wrap"><div class="kicker">지원 직무와 맞닿는 경험</div><h2>카드/제품운영에서 필요한 일을<br>다른 도메인에서 같은 방식으로 해왔습니다.</h2><div class="fit-list"><div class="fit-row"><div class="label">상품·이벤트 조건 운영</div><div class="desc">1+1 VOC 173건을 전수 분류해 고객이 실제로 놓친 조건을 확인하고 처리 기준을 다시 나눴습니다.</div><div class="proof">173건 · 142건(82.1%)</div></div><div class="fit-row"><div class="label">제휴사 정책 관리</div><div class="desc">골프장마다 다른 예약·취소·위약 기준을 공통 필드와 확인 순서로 표준화했습니다.</div><div class="proof">제휴사 400+</div></div><div class="fit-row"><div class="label">CS 오류·어드민 개선</div><div class="desc">반복 문의를 화면 노출 조건과 CRM 입력 구조 문제로 바꿔 개발·유관부서와 실제 반영했습니다.</div><div class="proof">5건 → 0건</div></div><div class="fit-row"><div class="label">반복 운영 자동화</div><div class="desc">대량 예외를 우선순위로 나누고 정형 입력만 자동화해 사람이 판단할 구간은 남겼습니다.</div><div class="proof">1,928건 · 7→1단계</div></div></div></div></section>
+<section class="section soft" id="work"><div class="wrap"><div class="kicker">선택 사례</div><h2>결과보다, 어떤 문제를 어떻게 정리했는지 보여주는 사례만 남겼습니다.</h2><div class="case-grid">
+<button class="case-card wide" data-modal="m1"><div class="case-top"><span class="case-no">01 · 프로모션 운영</span><span class="case-metric">173건 / 82.1%</span></div><h3>1+1 문의 173건을 다시 읽어보니, 142건은 같은 이유에서 시작됐습니다.</h3><p>고객 불만을 개별 응대 문제로 보지 않고, 혜택 조건을 놓치는 지점과 행동 시점을 기준으로 분류했습니다.</p><div class="case-open">사례 자세히 보기 →</div></button>
+<button class="case-card" data-modal="m2"><div class="case-top"><span class="case-no">02 · 제휴사 운영</span><span class="case-metric">400+</span></div><h3>400여 개 제휴사의 서로 다른 정책을 같은 순서로 읽게 만들었습니다.</h3><p>예약·취소·위약·예외 정보를 공통 속성으로 바꾸고, 애매한 기준은 제휴사에 직접 확인했습니다.</p><div class="case-open">사례 자세히 보기 →</div></button>
+<button class="case-card" data-modal="m3"><div class="case-top"><span class="case-no">03 · CRM 개선</span><span class="case-metric">자유 텍스트 → 선택값</span></div><h3>후속 담당자가 고객 의도를 다시 해석하지 않도록 입력 구조를 바꿨습니다.</h3><p>환불·교환 의도를 선택값으로 받고 그 값이 CRM까지 이어지도록 유관부서와 반영했습니다.</p><div class="case-open">사례 자세히 보기 →</div></button>
+<button class="case-card" data-modal="m4"><div class="case-top"><span class="case-no">04 · 운영 자동화</span><span class="case-metric">1,928건 · 7→1</span></div><h3>대량 예외를 먼저 나누고, 반복 입력만 자동화했습니다.</h3><p>재배송과 취소를 고객 영향·기한으로 분리한 뒤 정형 입력 동선을 Chrome Extension으로 줄였습니다.</p><div class="case-open">사례 자세히 보기 →</div></button>
+<button class="case-card" data-modal="m5"><div class="case-top"><span class="case-no">05 · 제품 개선</span><span class="case-metric">5건 → 0건</span></div><h3>고객이 품절로 오인하던 원인을 장바구니에서 바로 보이게 했습니다.</h3><p>배송 제약 원인 상품과 제한 사유를 같은 화면에 노출하는 최소 개선안을 개발팀과 당일 반영했습니다.</p><div class="case-open">사례 자세히 보기 →</div></button>
+</div></div></section>
+<section class="section" id="tools"><div class="wrap"><div class="kicker">업무 도구</div><h2>도구는 필요한 만큼만 썼습니다.</h2><div class="tools"><div class="tool-row"><b>데이터 정리</b><span>Excel (VBA·피벗·XLOOKUP), Google Sheets</span></div><div class="tool-row"><b>자동화</b><span>Chrome Extension, Apps Script, Slack API, Zapier</span></div><div class="tool-row"><b>운영·협업</b><span>CRM, 샵어드민, 채널톡, Notion, Slack</span></div><div class="tool-row"><b>AI 활용</b><span>Claude, ChatGPT, Gemini, NotebookLM — 초안·코딩·기준 검토에 활용하고 최종 판단은 실제 정책과 운영 흐름으로 검증</span></div></div></div></section>
+<section class="closing"><div class="wrap"><p>새로운 상품을 맡으면 먼저 조건과 예외를 구조화하고, 애매한 내용은 확인한 뒤 변경 이력과 오픈 체크 기준에 남깁니다. 반복되는 오류가 보이면 상담 문구를 늘리기보다 화면·어드민·운영 흐름 중 어디를 바꿔야 하는지부터 봅니다.</p><div class="small">오희은 · Toss CX Operations Manager (카드/제품운영) 지원</div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot-name">오희은</div><div class="foot-meta">gldms1009@naver.com · 010-2357-2674</div></div></footer>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">TOSS CX · OPERATIONS MANAGER · CARD / PRODUCT OPERATIONS</div>
-    <h1>오희은</h1>
-    <div class="role">조건을 정확하게 운영하고, 반복되는 손일은 제품·어드민·자동화 개선으로 줄여온 Operations Portfolio</div>
-    <div class="lead"><strong>혜택 조건처럼 작은 차이가 고객 오인으로 이어지는 업무일수록, 조건·시점·예외를 먼저 구조화합니다.</strong><br>프로모션 VOC를 실제 데이터로 분류하고, 400여 제휴사 정책을 같은 구조로 정리하고, 고객 화면·CRM·관리자 반복 입력을 개선해왔습니다.</div>
-    <div class="chips"><span class="chip">조건·문구 정확성</span><span class="chip">제휴사 정책 구조화</span><span class="chip">제품·어드민 개선</span><span class="chip">반복 운영 자동화</span><span class="chip">Slack · Notion 기반 협업</span></div>
-    <div class="avail">2026년 9월 초 입사 협의 가능</div>
-  </div>
-</header>
-
-<section class="section" id="fit">
-<div class="wrap">
-  <div class="eyebrow">ROLE FIT</div>
-  <h2 class="section-title">카드/제품운영 JD의 핵심 업무를, 다른 도메인에서 이미 같은 방식으로 해왔습니다.</h2>
-  <div class="fit-grid">
-    <div class="fit"><div class="k">상품·혜택 운영</div><h3>조건을 읽고 운영 기준으로 고정</h3><p>프로모션·배송 조건에서 고객이 놓치는 지점을 데이터로 확인하고 적용 기준을 정리했습니다.</p><div class="case-ref">CASE 01 · 05</div></div>
-    <div class="fit"><div class="k">이벤트 운영</div><h3>조건·문구·시점 검증</h3><p>1+1 VOC 173건을 전수 분류해 142건(82.1%)이 ‘문구 미인지’ 원인임을 확인했습니다.</p><div class="case-ref">CASE 01</div></div>
-    <div class="fit"><div class="k">제휴사 요청 대응</div><h3>400+ 파트너 기준 표준화</h3><p>제휴사별 상이한 정책을 공통 필드로 바꾸고 애매한 내용은 직접 확인해 변경사항까지 관리했습니다.</p><div class="case-ref">CASE 02</div></div>
-    <div class="fit"><div class="k">CS 오류·유관부서 전달</div><h3>문제를 구현 가능한 요구사항으로</h3><p>VOC를 화면 노출 조건·CRM 필드·예외 기준으로 구체화해 개발·EC·운영 담당자와 반영했습니다.</p><div class="case-ref">CASE 03 · 05</div></div>
-    <div class="fit"><div class="k">운영 효율화</div><h3>반복 입력을 실제 도구로 축소</h3><p>Chrome Extension·Apps Script·Slack API·Zapier로 반복 입력·조회·공유 구간을 줄였습니다.</p><div class="case-ref">CASE 04</div></div>
-  </div>
-</div>
-</section>
-
-<section class="soft" id="cases">
-<div class="wrap">
-
-  <article class="case-section" id="case1">
-    <div class="case-head"><div class="case-no">CASE 01 · EVENT / ACCURACY</div><div><h2>프로모션 VOC 173건 → 142건(82.1%) ‘문구 미인지’ → 조건·처리 기준 분리</h2><p class="case-summary">반복 문의를 상담자의 설명 문제로 보지 않고, 혜택 조건이 고객 행동 시점에서 어떻게 인지되는지 데이터로 다시 봤습니다.</p></div></div>
-    <div class="parl">
-      <div class="box"><b>PROBLEM</b><p>1+1 문의가 반복됐지만, 고객이 실제로 어느 조건에서 오인하는지 근거가 없었습니다.</p></div>
-      <div class="box"><b>ACTION</b><p>VOC 173건을 전수 분류하고 원인 유형·고객 행동 시점·채널을 함께 확인했습니다.</p></div>
-      <div class="box"><b>RESULT</b><p>원인 유형 기준 142건(82.1%)이 ‘문구 미인지’로 확인돼 초회 예외와 재인입 종결 기준을 분리했습니다.</p></div>
-      <div class="box"><b>LEARNING</b><p>혜택 운영은 문구 하나가 아니라 적용 조건·시점·예외를 같은 기준으로 관리해야 정확도가 올라갑니다.</p></div>
-    </div>
-    <div class="evidence-grid one">
-      <div class="evidence"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0EAAADYCAIAAACiHn+YAAA3YElEQVR42u3dd1wTyeM38EkIoYl0KYIFFPFERNSzXFEQRUBUigVUFPvZe8FyNhREEAsqhwXBAoodUbHryXkWROwI2JAOgnRS9vljf5cn3zQCVuDz/sOXzs4mZnZ28smWWQZFUQQAAAAAGhQmmgAAAAAAGQ4AAAAAkOEAAAAAABkOAAAAABkOAAAAAJDhAAAAAAAZDgAAAAAZDgAAAACQ4QAAAAAAGQ4AAAAAGQ4AAAAAkOEAAAAAABkOAAAAoMliyV81NTUV7QUAAADwVZmbm3/hDEcI6dChA1oWAAAA4Ct5+fKlnDVxLhUAAACg4UGGAwAAAECGAwAAAABkOAAAAABAhgMAAABAhgMAAAAAZDgAAAAAQIYDAAAAQIYDAAAAAGQ4AAAAAECGAwAAAECGAwAAAABkOAAAAABAhgMAAABAhgMAAAAAZDgAaMrWrVtHUdT+/fvlXyU2NpaiqAULFshTWVFR0c3N7dSpU5mZmTU1NZWVlenp6UeOHBk6dCiDwRCvP3LkSEoIh8Np3ry5YOnq1aspijp69Og3bqXBgwdTFPX8+XN0GABAhgOAb8TGxubIkSMZGRl0foqKirKyshLOWIQQFRUV4VWcnZ1v3LhRVlb26dOnixcv9uvXT3ipsrKy+CoSderU6dmzZ8ePHx86dGjLli0VFRWVlZVNTU1HjRp16tSpGzdu6Ojo1OmzsFgsQgibzZansqqq6h9//BEfH//hwwc6PmZkZBw9etTDw4PJlDCienp6PnjwoLKysrS09MaNGw4ODiIfmW4rAIA6o+T28uVLNBcAEEKGDBnC5XJFhoiqqipbW1u6gr+/P0VR0dHRglUWLFggUp/P50+ePFlQIS4ujqKoFStWyH5rNpv95s0biqKKiooWLVrUsWNHVVVVDQ2Nbt26bdq0qaamhqKoM2fO1OnjrF+/nqKoU6dO1VrT0tLy9evX0gbJ27dvi8THQ4cOiVcLCQmhl3p4eFAUlZaWhh4FAAIvX76UM5ghwwFAnd29e5eiqD179rRp00ZRUdHU1DQyMpKiqH///VdihjM3N6czn5+fn76+vrGxcVhYGEVR1dXVbdq0qVOGs7W1pfOfubm5+FJPT096vBKcKi0vL5cxrC1fvlz+DKeoqJiRkUFRVG5u7pw5cywsLOj4aGNj4+fnV1VVJfIijo6O9GccP368hoaGrq7uggUL+Hw+RVG9e/cWZDiBEydOoGsBgPwZDudSAaDO+Hw+IYTH49F/oSiKx+MJysWNHDlSQUHhypUry5cvz83NzczMnDZtWnJyMpvNHjlyZP3+DzU1NeKF1dXV9F8oiqL/IvHyOAHZS0X06NGjbdu2FEX17Nlz69atL168qKioKCkpSUpKWr58+ZgxYwghQ4YMUVNTo+sPGjSIELJ///6IiIiSkpKCgoKgoKCzZ88SQpydncVfX/B/BgCQBwtNAAB1tWHDhhMnTkyZMmXKlCnC+Yk+rCXOxMSEEJKUlCScVx48eGBtbd2qVas6vfXt27dfv37dtm3bu3fv+vv7x8fHv3v3jsVitWvXzsPDY/78+YSQ06dPl5aW0vVVVVWlvZSCgkJVVdW6devq+vElhi1BoeAvEi+Po1Oj8KL09PR27dqhUwFAneFcKgDUQ7du3aKjo1+/fk1f1H/w4EHhexpEzqXSN35eunRJOMo8fP[... ELLIPSIZATION ...]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" alt="1+1 미적용 VOC 원인 유형 요약"><div class="cap">실제 운영 시트의 개인정보 없는 집계 영역: 문구 미인지 142 · 정책 기준 혼동 12 · 홀수 수량 알림 부재 19 · 합계 173</div></div>
-    </div>
-    <div class="source-note">Source · 업로드된 ‘CS 운영 근무 스케줄.xlsx’의 ‘1+1 미적용 VOC’ 탭 집계값을 기반으로 요약 영역만 재현했습니다. 고객명·주문번호 등 개인정보는 사용하지 않았습니다.</div>
-  </article>
-
-  <article class="case-section" id="case2">
-    <div class="case-head"><div class="case-no">CASE 02 · PARTNER OPERATIONS</div><div><h2>400여 제휴사 정책 → 공통 속성 정의 → 같은 순서로 판단</h2><p class="case-summary">파트너마다 다른 정책을 개별 암기로 처리하지 않고, 공통 필드와 예외·변경 이력으로 관리했습니다.</p></div></div>
-    <div class="parl">
-      <div class="box"><b>PROBLEM</b><p>골프장마다 정책 위치·표현·상세 수준이 달라 확인 순서와 판단이 담당자마다 달랐습니다.</p></div>
-      <div class="box"><b>ACTION</b><p>400여 곳을 전수 확인해 공통 속성을 만들고 불명확한 내용은 제휴사에 직접 확인했습니다.</p></div>
-      <div class="box"><b>RESULT</b><p>제휴사와 관계없이 같은 순서로 정보를 찾고 판단할 수 있는 기준을 만들었습니다.</p></div>
-      <div class="box"><b>LEARNING</b><p>파트너 수가 늘수록 공통 필드·예외·변경 이력 관리가 운영 정확도와 러닝커브를 좌우합니다.</p></div>
-    </div>
-    <div class="result-highlight"><strong>공통 구조</strong> · 운영/연락 정보 → 취소 기한 → 위약 범위 → 동반자 제한 → 예외·변경사항</div>
-    <div class="schema"><div>운영·연락 정보</div><div>취소 기한</div><div>위약 범위</div><div>동반자 제한</div><div>예외·변경사항</div></div>
-  </article>
-
-  <article class="case-section" id="case3">
-    <div class="case-head"><div class="case-no">CASE 03 · ADMIN / CRM</div><div><h2>고객 의도를 자유 텍스트에서 선택값으로 → CRM 판단 구조 개선</h2><p class="case-summary">고객의 환불/교환 의도가 후속 담당자에게 바로 전달되지 않는 문제를 ‘입력 구조’ 문제로 바꿔 해결했습니다.</p></div></div>
-    <div class="parl">
-      <div class="box"><b>PROBLEM</b><p>고객 의도가 상담 내용에 묻혀 후속 담당자가 다시 읽거나 고객에게 재확인해야 했습니다.</p></div>
-      <div class="box"><b>ACTION</b><p>고객이 해결방법을 선택하고 그 값이 CRM에서 바로 보이는 흐름을 유관부서에 제안했습니다.</p></div>
-      <div class="box"><b>RESULT</b><p>후속 담당자가 고객 의도를 바로 확인할 수 있는 구조로 바뀌어 판단 기준이 명확해졌습니다.</p></div>
-      <div class="box"><b>LEARNING</b><p>어드민 개선은 화면을 늘리는 것이 아니라 다음 담당자의 ‘재해석 비용’을 줄이는 일입니다.</p></div>
-    </div>
-    <div class="evidence-grid">
-      <div class="evidence"><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case2-slack.png" alt="CRM 필드 개선 제안 Slack"><div class="cap">유관부서에 ‘해결방법’ 선택 필드 신설과 CRM 노출을 제안한 실제 협업 화면</div></div>
-      <div class="evidence"><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case2-crm-compare.png?v=2" alt="CRM before after"><div class="cap">선택값이 후속 담당자에게 이어지도록 정리한 CRM Before → After</div></div>
-    </div>
-  </article>
-
-  <article class="case-section" id="case4">
-    <div class="case-head"><div class="case-no">CASE 04 · AUTOMATION / OPERATIONS</div><div><h2>1,928건 대량 예외 → 우선순위 분리 + 반복 등록 7→1단계</h2><p class="case-summary">업무량이 커질수록 ‘무엇을 먼저 할지’와 ‘어디까지 자동화할지’를 따로 설계했습니다.</p></div></div>
-    <div class="parl">
-      <div class="box"><b>PROBLEM</b><p>물류 전환기 대량 예외와 반복 입력이 동시에 쌓여 고객 약속·재고·후속 기한을 함께 관리해야 했습니다.</p></div>
-      <div class="box"><b>ACTION</b><p>재배송 1,151건과 취소 대상 777건을 우선순위로 나누고 반복값/판단값을 분리해 Extension을 구현했습니다.</p></div>
-      <div class="box"><b>RESULT</b><p>재배송을 우선 처리하고 반복 등록 동선을 7→1단계로 단순화해 대량 처리에도 같은 도구를 사용했습니다.</p></div>
-      <div class="box"><b>LEARNING</b><p>좋은 자동화는 판단을 없애는 것이 아니라 정형 입력은 줄이고 책임이 필요한 확인은 남기는 것입니다.</p></div>
-    </div>
-    <div class="evidence-grid one">
-      <div class="evidence"><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case1-admin.png" alt="반품 자동 입력 관리자 화면"><div class="cap">반품사유·귀책·상세사유 등 반복 항목을 자동 입력하도록 만든 실제 관리자 화면</div></div>
-    </div>
-  </article>
-
-  <article class="case-section" id="case5">
-    <div class="case-head"><div class="case-no">CASE 05 · PRODUCT IMPROVEMENT</div><div><h2>배송 제약 동일 문의 5건 → 원인 상품 가시화 → 당일 반영 후 0건</h2><p class="case-summary">고객에게는 ‘품절/오류’처럼 보였지만 실제 원인은 특정 상품의 배송 제약이 화면에 보이지 않는 것이었습니다.</p></div></div>
-    <div class="parl">
-      <div class="box"><b>PROBLEM</b><p>운영 첫날 동일 문의 5건이 누적됐고, 실제 품절이 아닌데도 고객이 원인 상품과 제한 사유를 알 수 없었습니다.</p></div>
-      <div class="box"><b>ACTION</b><p>재고·배송 조건을 검증하고 원인 상품과 배송 가능 조건을 같은 화면에 보여주는 노출 조건/문구를 정리했습니다.</p></div>
-      <div class="box"><b>RESULT</b><p>개발팀이 당일 반영했고 이후 동일 문의는 0건으로 확인됐습니다.</p></div>
-      <div class="box"><b>LEARNING</b><p>고객이 판단하는 시점에 필요한 조건이 보이면 안내를 늘리지 않고도 문의 자체를 줄일 수 있습니다.</p></div>
-    </div>
-    <div class="evidence-grid">
-      <div class="evidence"><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case3-slack.png" alt="배송 제약 개선 협업 Slack"><div class="cap">원인과 시스템 구분 가능 여부, 최소 개선안과 안내 문구를 개발 담당자와 논의한 과정</div></div>
-      <div class="evidence"><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case3-cart.png?v=2" alt="장바구니 배송제약 개선 화면"><div class="cap">원인 상품과 배송 제약을 장바구니 단계에서 바로 확인하도록 반영한 화면</div></div>
-    </div>
-  </article>
-</div>
-</section>
-
-<section class="section" id="other">
-<div class="wrap">
-  <div class="eyebrow">OTHER OPERATING ASSETS</div>
-  <h2 class="section-title">핵심 사례에 넣지 않았지만, 반복 운영을 줄이기 위해 함께 만든 것들</h2>
-  <div class="other-grid">
-    <div class="other"><b>Slack API 담당자 조회</b><p>상품 담당자·상품코드 확인을 명령어 한 번으로 줄여 반복 조회를 단순화했습니다.</p></div>
-    <div class="other"><b>Zapier + Google Sheets</b><p>반복 커뮤니케이션 기록과 처리 현황을 자동으로 남겨 공유 누락을 줄이는 흐름을 설계했습니다.</p></div>
-    <div class="other"><b>FAQ · 온보딩 가이드</b><p>예외·에스컬레이션·금지 표현까지 같은 기준으로 문서화해 담당자가 바뀌어도 판단이 흔들리지 않도록 했습니다.</p></div>
-  </div>
-</div>
-</section>
-
-<section class="close" id="close">
-<div class="wrap">
-  <div class="eyebrow" style="color:rgba(255,255,255,.45)">WHY THIS ROLE</div>
-  <p class="lead2">새로운 상품과 정책도 빠르게 구조화하고, <strong>애매한 부분을 확인해 파트너·제품팀·개발 사이의 맥락을 정리하고 정확하게 오픈하는 운영 방식</strong>을 여러 환경에서 반복해왔습니다.</p>
-  <p class="sub">처음 맡는 도메인에서도 가이드를 먼저 읽고 공통 필드와 예외를 정리한 뒤, 변경 이력·오픈 체크·CS 오류 유형·자동화 후보를 함께 관리하는 방식으로 적응하겠습니다.</p>
-</div>
-</section>
-
-<footer><div class="wrap"><div><div class="footname">오희은</div><div class="foot">Toss CX · Operations Manager (카드/제품운영) 지원</div></div><div class="foot">gldms1009@naver.com · 010-2357-2674</div></div></footer>
+<div class="modal" id="m1"><div class="modal-panel"><div class="modal-head"><div><div class="modal-no">01 · 프로모션 운영</div><h3>프로모션 VOC 173건 → 142건(82.1%) ‘문구 미인지’</h3></div><button class="modal-close" aria-label="닫기">×</button></div><div class="modal-body"><div class="detail"><div class="key">Problem</div><p>1+1 혜택이 적용되지 않았다는 문의가 반복됐지만, 고객이 실제로 어느 조건에서 오인하는지 근거가 없었습니다.</p></div><div class="detail"><div class="key">Action</div><p>VOC 173건을 전수 분류하고 원인 유형·고객 행동 시점·채널을 함께 확인했습니다. 단순 문의량이 아니라 고객이 조건을 놓친 지점을 보려 했습니다.</p></div><div class="detail"><div class="key">Result</div><p>원인 유형 기준 142건(82.1%)이 ‘문구 미인지’로 확인됐고, 초회 예외 처리와 재인입 시 정책 안내·종결 기준을 분리했습니다.</p></div><div class="detail"><div class="key">Learning</div><p>혜택 운영에서는 문구 자체보다 적용 조건·노출 시점·예외를 같은 기준으로 관리해야 고객 오인을 줄일 수 있었습니다.</p></div><div class="result-line"><strong>핵심 결과</strong> · 173건 전수 분류 → 문구 미인지 142건(82.1%) · 정책 기준 혼동 12건 · 홀수 수량 알림 부재 19건</div><div class="evidence"><div class="evidence-grid one"><figure><img src="voc173_evidence.png" alt="1+1 미적용 VOC 원인 유형 요약"><figcaption>실제 운영 시트의 개인정보 없는 집계 영역. 고객명·주문번호 등 개인정보는 제외했습니다.</figcaption></figure></div></div></div></div></div>
+<div class="modal" id="m2"><div class="modal-panel"><div class="modal-head"><div><div class="modal-no">02 · 제휴사 운영</div><h3>400여 개 제휴사 정책을 공통 속성과 확인 순서로 표준화</h3></div><button class="modal-close" aria-label="닫기">×</button></div><div class="modal-body"><div class="detail"><div class="key">Problem</div><p>골프장마다 예약·취소·위약 기준의 위치와 표현, 상세 수준이 달라 같은 유형의 문의도 담당자마다 확인 방식이 달랐습니다.</p></div><div class="detail"><div class="key">Action</div><p>400여 개 제휴사 정보를 전수 확인해 공통 속성을 만들고, 불명확한 내용은 제휴사에 직접 확인했습니다. 정책 변경 시에는 내부 문서와 FAQ에 같은 기준으로 반영했습니다.</p></div><div class="detail"><div class="key">Result</div><p>제휴사와 관계없이 같은 순서로 정보를 찾고 판단할 수 있는 구조가 생겼고, 신규 인력도 동일한 기준으로 업무를 익힐 수 있었습니다.</p></div><div class="detail"><div class="key">Learning</div><p>파트너가 많을수록 개별 정보를 외우는 것보다 공통 필드와 예외·변경 이력을 관리하는 구조가 운영 정확도를 좌우했습니다.</p></div><div class="schema"><div>운영·연락 정보</div><div>취소 기한</div><div>위약 범위</div><div>동반자 제한</div><div>예외·변경사항</div></div></div></div></div>
+<div class="modal" id="m3"><div class="modal-panel"><div class="modal-head"><div><div class="modal-no">03 · CRM 개선</div><h3>고객 의도를 자유 텍스트에서 선택값으로 바꿔 후속 판단을 단순화</h3></div><button class="modal-close" aria-label="닫기">×</button></div><div class="modal-body"><div class="detail"><div class="key">Problem</div><p>환불·교환 등 고객이 원하는 해결방법이 상담 내용에 묻혀 후속 담당자가 다시 읽고 판단하거나 고객에게 재확인하는 일이 생겼습니다.</p></div><div class="detail"><div class="key">Action</div><p>고객이 ‘원하는 해결방법’을 먼저 선택하고 그 값이 CRM 솔루션 필드에서 바로 보이도록 입력 구조 개선안을 유관부서에 제안했습니다.</p></div><div class="detail"><div class="key">Result</div><p>후속 담당자가 고객 의도를 구조화된 값으로 바로 확인할 수 있어 재확인 왕복과 담당자별 해석 차이를 줄였습니다.</p></div><div class="detail"><div class="key">Learning</div><p>운영 효율은 답변을 더 잘 쓰는 것보다 다음 사람이 다시 해석해야 하는 정보를 줄일 때 더 크게 좋아졌습니다.</p></div><div class="evidence"><div class="evidence-grid"><figure><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case2-slack.png" alt="CRM 필드 개선 협업"><figcaption>‘해결방법’ 선택 필드와 CRM 노출을 제안한 실제 협업 화면</figcaption></figure><figure><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case2-crm-compare.png?v=2" alt="CRM Before After"><figcaption>CRM Before → After · 고객 의도가 후속 담당자에게 구조화된 값으로 전달</figcaption></figure></div></div></div></div></div>
+<div class="modal" id="m4"><div class="modal-panel"><div class="modal-head"><div><div class="modal-no">04 · 운영 자동화</div><h3>1,928건 대량 예외를 우선순위로 나누고 반복 입력 동선을 7→1단계로 축소</h3></div><button class="modal-close" aria-label="닫기">×</button></div><div class="modal-body"><div class="detail"><div class="key">Problem</div><p>3PL 전환 과정에서 재배송 1,151건과 취소 대상 777건이 동시에 발생했고, 고객 약속일·재고·후속 처리 기한 때문에 모든 건을 같은 순서로 처리할 수 없었습니다.</p></div><div class="detail"><div class="key">Action</div><p>재배송과 취소를 고객 영향과 처리 시점으로 먼저 분리하고, 반복적으로 입력하는 정형값만 Chrome Extension으로 자동화했습니다. 귀책·금액·최종 등록처럼 책임이 필요한 값은 사람이 확인하도록 남겼습니다.</p></div><div class="detail"><div class="key">Result</div><p>재배송 1,151건을 우선 처리하고 반복 등록 동선을 7→1단계로 줄였습니다. 남은 업무량을 다시 산정해 필요한 지원 인력도 3명에서 2명으로 조정했습니다.</p></div><div class="detail"><div class="key">Learning</div><p>좋은 자동화는 판단을 없애는 것이 아니라 사람이 판단할 구간과 기계가 반복할 구간을 분명하게 나누는 것이었습니다.</p></div><div class="evidence"><div class="evidence-grid one"><figure><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case1-admin.png" alt="Chrome Extension 관리자 화면"><figcaption>반품사유·귀책·상세사유 등 정형 입력을 자동화한 실제 관리자 화면</figcaption></figure></div></div></div></div></div>
+<div class="modal" id="m5"><div class="modal-panel"><div class="modal-head"><div><div class="modal-no">05 · 제품 개선</div><h3>배송 제약 동일 문의 5건 → 원인 상품 가시화 → 당일 반영 후 0건</h3></div><button class="modal-close" aria-label="닫기">×</button></div><div class="modal-body"><div class="detail"><div class="key">Problem</div><p>배송 제약 상품이 장바구니에 섞이면 고객에게는 품절이나 시스템 오류처럼 보였습니다. 운영 첫날 같은 문의가 5건 누적됐습니다.</p></div><div class="detail"><div class="key">Action</div><p>장바구니 조합과 재고·배송 조건을 확인한 뒤, 원인 상품 옆에 제한 사유를 보여주는 최소 개선안을 개발 담당자에게 제안했습니다. 시스템에서 구분 가능한 조건과 안내 문구까지 함께 정리했습니다.</p></div><div class="detail"><div class="key">Result</div><p>개발팀이 당일 반영했고 이후 동일 문의는 추가로 들어오지 않았습니다. 유사한 배송 제약 상품에도 같은 방식으로 확장했습니다.</p></div><div class="detail"><div class="key">Learning</div><p>고객이 판단하는 바로 그 시점에 필요한 조건을 보여주면 안내 문구를 늘리지 않고도 문의 자체를 줄일 수 있었습니다.</p></div><div class="evidence"><div class="evidence-grid"><figure><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case3-slack.png" alt="배송 제약 개선 협업"><figcaption>원인 재현 → 시스템 구분 가능 여부 확인 → 최소 개선안 제안</figcaption></figure><figure><img loading="lazy" src="https://collette1009.github.io/portfolio-main/kakao/case3-cart.png?v=2" alt="장바구니 배송 제약 개선"><figcaption>원인 상품과 배송 제약을 장바구니 단계에서 바로 확인하도록 실제 반영</figcaption></figure></div></div></div></div></div>
+<div class="lightbox" id="lightbox"><img id="lightbox-img" alt="확대 이미지"></div>
+<script>
+const modals=[...document.querySelectorAll('.modal')];
+document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById(btn.dataset.modal).classList.add('open');document.body.style.overflow='hidden';}));
+function closeModal(m){m.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-close').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();closeModal(btn.closest('.modal'));}));
+modals.forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=document.querySelector('.modal.open');if(open)closeModal(open);document.getElementById('lightbox').classList.remove('open');}});
+const lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img');
+document.querySelectorAll('.evidence img').forEach(img=>img.addEventListener('click',e=>{e.stopPropagation();lbi.src=img.src;lb.classList.add('open');}));
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+</script>
 </body>
 </html>
