@@ -1,0 +1,32 @@
+name: Render Toss CX Ads resume PDF link fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/render-tosscx-ads-resume-linkfix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Render HTML to PDF with Chrome
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu \
+            --print-to-pdf="$GITHUB_WORKSPACE/tosscx-ads/오희은_이력서_토스CX_Operations_Manager_광고제품운영_최종.pdf" \
+            --print-to-pdf-no-header \
+            "file://$GITHUB_WORKSPACE/tosscx-ads/resume-pdf.html"
+
+      - name: Commit PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "tosscx-ads/오희은_이력서_토스CX_Operations_Manager_광고제품운영_최종.pdf"
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix Toss CX ads resume portfolio PDF link"
+          git push
