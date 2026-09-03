@@ -1,4 +1,4 @@
-name: Finalize Toss CX Ads Resume
+name: Verify Toss CX Ads Resume
 
 on:
   push:
@@ -9,68 +9,28 @@ permissions:
   contents: write
 
 jobs:
-  finalize:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Refine resume typography and portfolio captions
+      - name: Render PDF pages for visual verification
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          resume_path = Path('tosscx-ads/resume-pdf.html')
-          s = resume_path.read_text(encoding='utf-8')
-          replacements = {
-              '.case small{font-size:7px;': '.case small{font-size:7.6px;',
-              '.case h3{font-size:9.7px;': '.case h3{font-size:10.4px;',
-              '.quad b{font-size:7.4px;': '.quad b{font-size:8.1px;',
-              '.quad p{font-size:7.8px;': '.quad p{font-size:8.4px;',
-              '.tool b{display:block;font-size:8.4px;': '.tool b{display:block;font-size:8.8px;',
-              '.tool span{font-size:7.7px;': '.tool span{font-size:8.3px;',
-              '.note{font-size:8.1px;': '.note{font-size:8.6px;',
-          }
-          for old, new in replacements.items():
-              count = s.count(old)
-              if count != 1:
-                  raise SystemExit(f'Resume replacement mismatch: {old!r} count={count}')
-              s = s.replace(old, new)
-          resume_path.write_text(s, encoding='utf-8')
-
-          portfolio_path = Path('tosscx-ads/index.html')
-          p = portfolio_path.read_text(encoding='utf-8')
-          caption_replacements = {
-              '비식별 증빙 · 관리자 화면</figcaption>': '비식별 증빙 · 배송조회 조건을 확인한 관리자 화면</figcaption>',
-              '비식별 증빙 · 오류 재현 화면</figcaption>': '비식별 증빙 · 동일 조건에서 배송조회 실패가 재현된 화면</figcaption>',
-              '비식별 증빙 · 배송 제약 관련 개발 협업 기록</figcaption>': '비식별 증빙 · 배송 제약 원인 노출과 최소 기능 범위를 논의한 협업 기록</figcaption>',
-              '비식별 증빙 · Chrome Extension 적용 후 관리자 화면</figcaption>': '비식별 증빙 · Chrome Extension 적용 후 정형 필드 자동입력 화면</figcaption>',
-          }
-          for old, new in caption_replacements.items():
-              count = p.count(old)
-              if count != 1:
-                  raise SystemExit(f'Portfolio replacement mismatch: {old!r} count={count}')
-              p = p.replace(old, new)
-          portfolio_path.write_text(p, encoding='utf-8')
-          PY
-
-      - name: Render final PDF
-        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
           PDF="$GITHUB_WORKSPACE/tosscx-ads/오희은_이력서_토스CX_Operations_Manager_광고제품운영_최종.pdf"
-          google-chrome --headless --no-sandbox --disable-gpu \
-            --run-all-compositor-stages-before-draw \
-            --virtual-time-budget=6000 \
-            --print-to-pdf="$PDF" \
-            --print-to-pdf-no-header \
-            "file://$GITHUB_WORKSPACE/tosscx-ads/resume-pdf.html"
-          test -s "$PDF"
-          ls -lh "$PDF"
+          pdftoppm -png -r 120 "$PDF" "$GITHUB_WORKSPACE/tosscx-ads/_verify"
+          mv "$GITHUB_WORKSPACE/tosscx-ads/_verify-1.png" "$GITHUB_WORKSPACE/tosscx-ads/_verify-page1.png"
+          mv "$GITHUB_WORKSPACE/tosscx-ads/_verify-2.png" "$GITHUB_WORKSPACE/tosscx-ads/_verify-page2.png"
+          test -s "$GITHUB_WORKSPACE/tosscx-ads/_verify-page1.png"
+          test -s "$GITHUB_WORKSPACE/tosscx-ads/_verify-page2.png"
 
-      - name: Commit final files
+      - name: Commit verification images
         run: |
           git config user.name 'collette1009'
           git config user.email 'gldms1009@gmail.com'
-          git add tosscx-ads/index.html tosscx-ads/resume-pdf.html 'tosscx-ads/오희은_이력서_토스CX_Operations_Manager_광고제품운영_최종.pdf'
-          git commit -m 'Finalize Toss CX ads resume readability and evidence captions'
+          git add tosscx-ads/_verify-page1.png tosscx-ads/_verify-page2.png
+          git commit -m 'Add temporary Toss CX resume verification renders'
           git push
