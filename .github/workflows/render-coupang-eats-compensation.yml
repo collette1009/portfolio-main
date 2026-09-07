@@ -1,0 +1,31 @@
+name: Render Coupang Eats Compensation Resume
+on:
+  push:
+    paths:
+      - '.github/workflows/render-coupang-eats-compensation.yml'
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare print source
+        run: cp coupang-eats-compensation-ops/resume.html coupang-eats-compensation-ops/resume-pdf.html
+      - name: Render PDF and verification pages
+        run: |
+          PDF="$GITHUB_WORKSPACE/coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf"
+          google-chrome --headless --no-sandbox --disable-gpu --run-all-compositor-stages-before-draw --virtual-time-budget=6000 --print-to-pdf="$PDF" --print-to-pdf-no-header "file://$GITHUB_WORKSPACE/coupang-eats-compensation-ops/resume-pdf.html"
+          test -s "$PDF"
+          pdfinfo "$PDF" | grep '^Pages:'
+          pdftoppm -png -f 1 -singlefile -r 110 "$PDF" coupang-eats-compensation-ops/_verify-page1
+          pdftoppm -png -f 2 -singlefile -r 110 "$PDF" coupang-eats-compensation-ops/_verify-page2
+      - name: Commit outputs
+        run: |
+          git config user.name 'collette1009'
+          git config user.email 'gldms1009@gmail.com'
+          git add coupang-eats-compensation-ops/resume-pdf.html coupang-eats-compensation-ops/*.pdf coupang-eats-compensation-ops/_verify-page1.png coupang-eats-compensation-ops/_verify-page2.png
+          git commit -m 'Render Coupang Eats compensation operations resume PDF'
+          git push
