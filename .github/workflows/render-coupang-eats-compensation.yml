@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/render-coupang-eats-compensation.yml'
+      - 'coupang-eats-compensation-ops/resume.html'
 permissions:
   contents: write
 jobs:
@@ -45,5 +46,5 @@ jobs:
           git config user.name 'collette1009'
           git config user.email 'gldms1009@gmail.com'
           git add coupang-eats-compensation-ops/resume-pdf.html coupang-eats-compensation-ops/*.pdf coupang-eats-compensation-ops/_verify-page1.png coupang-eats-compensation-ops/_verify-page2.png
-          git commit -m 'Render Coupang Eats compensation operations resume PDF'
+          git commit -m 'Render corrected Coupang Eats compensation operations resume PDF'
           git push
