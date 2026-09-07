@@ -14,19 +14,25 @@ jobs:
           fetch-depth: 0
       - name: Prepare print source
         run: cp coupang-eats-compensation-ops/resume.html coupang-eats-compensation-ops/resume-pdf.html
-      - name: Render PDF
+      - name: Render and verify PDF
         run: |
-          PDF="$GITHUB_WORKSPACE/coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf"
-          google-chrome --headless --no-sandbox --disable-gpu --run-all-compositor-stages-before-draw --virtual-time-budget=6000 --print-to-pdf="$PDF" --print-to-pdf-no-header "file://$GITHUB_WORKSPACE/coupang-eats-compensation-ops/resume-pdf.html"
-          test -s "$PDF"
-      - name: Verify two pages and render previews
-        run: |
-          python3 -m pip install --quiet pymupdf
+          python3 -m pip install --quiet playwright pymupdf
           python3 - <<'PY'
-          import fitz
+          import asyncio, fitz
           from pathlib import Path
-          p=Path('coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf')
-          d=fitz.open(p)
+          from playwright.async_api import async_playwright
+          root=Path.cwd()
+          html=(root/'coupang-eats-compensation-ops/resume-pdf.html').resolve().as_uri()
+          pdf=root/'coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf'
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True, executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
+                  page=await browser.new_page()
+                  await page.goto(html, wait_until='networkidle')
+                  await page.pdf(path=str(pdf), format='A4', print_background=True, scale=0.88, margin={'top':'0','right':'0','bottom':'0','left':'0'})
+                  await browser.close()
+          asyncio.run(main())
+          d=fitz.open(pdf)
           print('Pages:', len(d))
           if len(d) != 2:
               raise SystemExit(f'Expected 2 pages, got {len(d)}')
