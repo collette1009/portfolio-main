@@ -14,14 +14,26 @@ jobs:
           fetch-depth: 0
       - name: Prepare print source
         run: cp coupang-eats-compensation-ops/resume.html coupang-eats-compensation-ops/resume-pdf.html
-      - name: Render PDF and verification pages
+      - name: Render PDF
         run: |
           PDF="$GITHUB_WORKSPACE/coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf"
           google-chrome --headless --no-sandbox --disable-gpu --run-all-compositor-stages-before-draw --virtual-time-budget=6000 --print-to-pdf="$PDF" --print-to-pdf-no-header "file://$GITHUB_WORKSPACE/coupang-eats-compensation-ops/resume-pdf.html"
           test -s "$PDF"
-          pdfinfo "$PDF" | grep '^Pages:'
-          pdftoppm -png -f 1 -singlefile -r 110 "$PDF" coupang-eats-compensation-ops/_verify-page1
-          pdftoppm -png -f 2 -singlefile -r 110 "$PDF" coupang-eats-compensation-ops/_verify-page2
+      - name: Verify two pages and render previews
+        run: |
+          python3 -m pip install --quiet pymupdf
+          python3 - <<'PY'
+          import fitz
+          from pathlib import Path
+          p=Path('coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf')
+          d=fitz.open(p)
+          print('Pages:', len(d))
+          if len(d) != 2:
+              raise SystemExit(f'Expected 2 pages, got {len(d)}')
+          for i,page in enumerate(d):
+              pix=page.get_pixmap(matrix=fitz.Matrix(1.35,1.35), alpha=False)
+              pix.save(f'coupang-eats-compensation-ops/_verify-page{i+1}.png')
+          PY
       - name: Commit outputs
         run: |
           git config user.name 'collette1009'
