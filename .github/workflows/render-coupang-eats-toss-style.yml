@@ -1,0 +1,32 @@
+name: Render redesigned Coupang Eats resume
+
+on:
+  push:
+    paths:
+      - '.github/workflows/render-coupang-eats-toss-style.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync print source
+        run: cp coupang-eats-compensation-ops/resume.html coupang-eats-compensation-ops/resume-pdf.html
+      - name: Render PDF
+        shell: bash
+        run: |
+          PDF='coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf'
+          HTML="file://${GITHUB_WORKSPACE}/coupang-eats-compensation-ops/resume-pdf.html"
+          google-chrome --headless=new --no-sandbox --disable-gpu --run-all-compositor-stages-before-draw --virtual-time-budget=5000 --no-pdf-header-footer --print-to-pdf="$PDF" "$HTML"
+          test -s "$PDF"
+      - name: Commit redesigned resume
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add coupang-eats-compensation-ops/resume-pdf.html 'coupang-eats-compensation-ops/오희은_이력서_쿠팡이츠서비스_가맹점보상운영기획_최종.pdf'
+          git commit -m 'Render Toss-style Coupang Eats resume PDF'
+          git push
