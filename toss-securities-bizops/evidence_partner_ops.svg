@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1030" viewBox="0 0 1500 1030">
+<rect width="1500" height="1030" fill="#f5f5f5"/>
+<rect x="70" y="60" width="1360" height="910" rx="20" fill="#ffffff" stroke="#d8d8d8" stroke-width="2"/>
+<text x="120" y="125" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#777" letter-spacing="2">SLACK EVIDENCE · PARTNER &amp; COST RECOVERY</text>
+<text x="120" y="190" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#111">택배사 사고·배상 프로세스 재협의</text>
+<text x="120" y="235" font-family="Arial, sans-serif" font-size="21" fill="#666">실제 Slack 업무 기록을 포트폴리오용으로 비식별 재구성했습니다.</text>
+<line x1="120" y1="275" x2="1380" y2="275" stroke="#111" stroke-width="2"/>
+<text x="120" y="330" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">기존 사고 접수</text>
+<text x="150" y="380" font-family="Arial, sans-serif" font-size="22" fill="#444">겉박스 사진 + 내품 사진 + 송장번호 사진 + 재포장 + 실물 회수 필수</text>
+<text x="150" y="425" font-family="Arial, sans-serif" font-size="20" fill="#777">식품 누수·유리 파손처럼 보관이 어려운 건은 고객이 증빙을 포기하면 배상 접수도 중단될 수 있었습니다.</text>
+<rect x="110" y="475" width="1260" height="145" rx="14" fill="#f5f5f5"/>
+<text x="150" y="530" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111">파트너 재협의 결과</text>
+<text x="150" y="580" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111">“실물 회수 생략 및 증빙 간소화” 1차 합의</text>
+<text x="150" y="615" font-family="Arial, sans-serif" font-size="19" fill="#666">내품 사진이 없을 경우 주문·재배송 이력으로 대체하는 방안도 추가 협의</text>
+<line x1="120" y1="675" x2="1380" y2="675" stroke="#dddddd" stroke-width="2"/>
+<text x="120" y="730" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">비용 회수 비교</text>
+<text x="150" y="800" font-family="Arial, sans-serif" font-size="28" fill="#555">507,000원</text>
+<text x="420" y="800" font-family="Arial, sans-serif" font-size="28" fill="#777">→</text>
+<text x="500" y="800" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#111">7,449,621원</text>
+<text x="1100" y="800" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#111">약 14.7배</text>
+<rect x="110" y="850" width="1260" height="75" rx="14" fill="#191919"/>
+<text x="150" y="897" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">POINT · 고객 불편과 비용 누수를 같은 운영 문제로 보고 파트너 기준 자체를 다시 협의했습니다.</text>
+</svg>
