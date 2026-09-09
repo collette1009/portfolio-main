@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1030" viewBox="0 0 1500 1030">
+<rect width="1500" height="1030" fill="#f5f5f5"/>
+<rect x="70" y="60" width="1360" height="910" rx="20" fill="#ffffff" stroke="#d8d8d8" stroke-width="2"/>
+<text x="120" y="125" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#777" letter-spacing="2">SLACK EVIDENCE · COST OPERATIONS</text>
+<text x="120" y="190" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#111">자금집행 일일 보고 — 8/28 메인 + 8/31 보조</text>
+<text x="120" y="235" font-family="Arial, sans-serif" font-size="21" fill="#666">실제 Slack 업무 기록을 포트폴리오용으로 비식별 재구성했습니다.</text>
+<line x1="120" y1="275" x2="1380" y2="275" stroke="#111" stroke-width="2"/>
+<text x="120" y="325" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">2026.08.28 · 자금집행 17건 / 1.5억</text>
+<text x="150" y="375" font-family="Arial, sans-serif" font-size="23" fill="#333">지급 완료</text><text x="520" y="375" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">2건 / 29만</text>
+<text x="150" y="425" font-family="Arial, sans-serif" font-size="23" fill="#333">필수 미지급</text><text x="520" y="425" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">3건 / 545만</text>
+<text x="150" y="475" font-family="Arial, sans-serif" font-size="23" fill="#333">일반 미지급</text><text x="520" y="475" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">12건 / 1.4억</text>
+<rect x="110" y="510" width="1260" height="150" rx="14" fill="#f5f5f5"/>
+<text x="150" y="565" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111">누적 미집행 559건 / 96.3억</text>
+<text x="150" y="615" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111">보류 34건 / 10.2억</text>
+<line x1="120" y1="700" x2="1380" y2="700" stroke="#dddddd" stroke-width="2"/>
+<text x="120" y="750" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#111">2026.08.31 · 필수 미지급 1건 / 993만</text>
+<text x="150" y="795" font-family="Arial, sans-serif" font-size="21" fill="#444">법정 납부기한이 있는 건을 ‘필수’로 별도 표시해 우선 확인 대상으로 구분</text>
+<rect x="110" y="840" width="1260" height="85" rx="14" fill="#191919"/>
+<text x="150" y="892" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">POINT · 당일 집행액만 나열하지 않고 필수 / 일반 / 미집행 / 보류를 분리해 판단 순서를 만들었습니다.</text>
+</svg>
